@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.12.0/js/anychart-core.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.12.0/js/anychart-sankey.min.js"></script>
+    
+</head>
+<body>
+    <div id="sankey">
+    </div>
+    
+    <script>
+        d3.csv('/csv/processed_sample_data_networks.csv', function(err, rows) {
+            function unpack(rows, key) {
+                return rows.map(function(row) {return row[key];}); 
+            }
+            let origin = unpack(rows, 'Origin'),
+                destination = unpack(rows, 'Destination'),
+                title = unpack(rows, 'Title'),
+                author = unpack(rows, 'Author'),
+                recipient = unpack(rows, 'Recipient'),
+                start_lat = unpack(rows, 'start_lat'),
+                start_long = unpack(rows, 'start_long'),
+                end_lat = unpack(rows, 'end_lat'),
+                end_long = unpack(rows, 'end_long'),
+                years = unpack(rows, 'Year'),
+                month = unpack(rows, 'Month'),
+                day = unpack(rows, 'Day'),
+                color = unpack(rows, 'Color'),
+                seasons = unpack(rows, 'Season')
+
+            let data = [],
+                unique_origins = [];
+
+            function count_element(array, element) {
+                count = 0
+                for (let i = 0; i < array.length; i++) {
+                    if (array[i] === element) {
+                        count ++
+                    }
+                }
+                return count
+            }
+
+            function count_element_2(array1, array2, element1, element2) {
+                count = 0
+                for (let i = 0; i < array1.length; i++) {
+                    if (array1[i] === element1 & array2[i] === element2) {
+                        count ++
+                    }
+                }
+                return count
+            }
+
+            for (let i = 0; i < origin.length; i++) {
+                if (!unique_origins.includes(origin[i])) {
+                    data.push({from: origin[i], to: destination[i], weight: count_element_2(origin, destination, origin[i], destination[i])})
+                    unique_origins.push(origin[i])
+                }
+            }
+            
+
+
+        let chart = anychart.sankey(data);
+
+        chart.container("sankey");
+        chart.width = '500px'
+
+        chart.draw();
+       
+        })
+    
+    </script>
+    
+</body>
+</html>

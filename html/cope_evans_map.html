@@ -24,9 +24,6 @@
     <p style="text-align:left">Year: <output id="value"></output></p>
     <input id= "author_input" type= "text" placeholder= "Last name, first name", list = 'author_list' style="width: 600px;">
     <datalist id = "author_list"></datalist>
-    <input type="button" id = "All" value="All">
-    <input type="button" id = "Year" value="Year">
-    <input type="button" id = "Author" value="Author">
     <fieldset>
         <legend>Filters:</legend>
         <div>
@@ -70,14 +67,14 @@
                 color = unpack(rows, 'Color'),
                 seasons = unpack(rows, 'Season')
               
-            let unique_author = []
+            let uniqueAuthor = []
             for (let i = 0; i < authors.length; i++) {
-                if (!unique_author.includes(authors[i])) {
-                    unique_author.push(authors[i])
+                if (!uniqueAuthor.includes(authors[i])) {
+                    uniqueAuthor.push(authors[i])
                 }
             }
             let list = document.getElementById('author_list')
-            unique_author.forEach(function(item) {
+            uniqueAuthor.forEach(function(item) {
                 let option = document.createElement('option');
                 option.value = item;
                 list.appendChild(option);
@@ -132,7 +129,7 @@
                                     }
                                 }
                                 else { //season, author boxes checked
-                                    if (authors[i] == authorInput && seasons[i] == box.name) {
+                                    if (authors[i] == authorInput && seasons[i] == seasonBox.name) {
                                         data[i].addTo(map)
                                     }
                                 }
@@ -180,116 +177,84 @@
                 }
             }
 
-            let allButton = document.querySelector('#All'),
-                yearButton = document.querySelector('#Year'),
-                authorButton = document.querySelector('#Author');
-                
-
-            let winterBox = {box: document.querySelector("#winter"), name: "Winter"},
+            let allBox = document.querySelector("#all"),
+                yearBox = document.querySelector("#year"),
+                authorBox = document.querySelector("#author"),
+                winterBox = {box: document.querySelector("#winter"), name: "Winter"},
                 springBox = {box: document.querySelector("#spring"), name: 'Spring'},
                 summerBox = {box: document.querySelector("#summer"), name: 'Summer'},
                 fallBox = {box: document.querySelector("#fall"), name: 'Fall'};
+
+            seasonBoxes = [winterBox, springBox, summerBox, fallBox]
 
             let value = document.querySelector("#value");
             let yearInput = document.querySelector("#year_input")
             value.textContent = yearInput.value;
             
-
-            seasonBoxes = [winterBox, springBox, summerBox, fallBox]
-
-            yearButton.addEventListener("click", (event => {
-                yearBox.checked = !yearBox.checked
-                filterAll(seasonBoxes, authorBox, yearBox, authorInput.value, value.textContent, data)
-            }));
-
-            allButton.addEventListener("click", (event) => {
-                for (let i = 0; i < data.length; i++) {
-                    map.removeLayer(data[i])
-                    data[i].addTo(map)
-                }
-                winterBox.checked = true
-                springBox.checked = true
-                summerBox.checked = true
-                fallBox.checked = true
-                yearBox.checked = false
-                authorBox.checked = false
-            });
-
-            let allBox = document.querySelector("#all"),
-                yearBox = document.querySelector("#year"),
-                authorBox = document.querySelector("#author");
-            
-            
             allBox.addEventListener("click", (event => {
-                if (allBox.checked == true) {
+                if (allBox.checked) {
                     for (let i = 0; i < data.length; i++) {
-                        map.removeLayer(data[i])
-                        data[i].addTo(map)
+                        map.removeLayer(data[i]) //remove current markers
+                        data[i].addTo(map) //add back on all markers
                     }
-                    winterBox.checked = true
-                    springBox.checked = true
-                    summerBox.checked = true
-                    fallBox.checked = true
-                    yearBox.checked = false
+                    winterBox.box.checked = true //check all the season boxes
+                    springBox.box.checked = true
+                    summerBox.box.checked = true
+                    fallBox.box.checked = true
+                    yearBox.checked = false //uncheck the year and author boxes
                     authorBox.checked = false
+                    filterAll(seasonBoxes, authorBox, yearBox, authorInput.value, yearInput.value, data)
                 }
                 else {
                     yearBox.checked = true
                     authorBox.checked = true
-                    filterAll(seasonBoxes, authorBox, yearBox, authorInput.value, value.textContent, data)
+                    filterAll(seasonBoxes, authorBox, yearBox, authorInput.value, yearInput.value, data)
                 }
             }));
 
             yearBox.addEventListener("click", (event => {
                 allBox.checked = (!authorBox.checked && !yearBox.checked)
-                filterAll(seasonBoxes, authorBox, yearBox, authorInput.value, value.textContent, data)
+                filterAll(seasonBoxes, authorBox, yearBox, authorInput.value, yearInput.value, data)
             }))
 
             authorBox.addEventListener("click", (event => {
                 allBox.checked = (!authorBox.checked && !yearBox.checked)
-                if (unique_author.includes(authorInput.value)) {
-                    filterAll(seasonBoxes, authorBox, yearBox, authorInput.value, value.textContent, data)
+                if (uniqueAuthor.includes(authorInput.value)) {
+                    filterAll(seasonBoxes, authorBox, yearBox, authorInput.value, yearInput.value, data)
                 }
             }));
-
+            
             winterBox.box.addEventListener("click", (event => {
-                filterAll(seasonBoxes, authorBox, yearBox, authorInput.value, value.textContent, data)
+                allBox.checked = winterBox.box.checked && springBox.box.checked && summerBox.box.checked && fallBox.box.checked; //uncheck all box if any season box unchecked 
+                filterAll(seasonBoxes, authorBox, yearBox, authorInput.value, yearInput.value, data);
             }));
             springBox.box.addEventListener("click", (event => {
-                filterAll(seasonBoxes, authorBox, yearBox, authorInput.value, value.textContent, data)
+                allBox.checked = winterBox.box.checked && springBox.box.checked && summerBox.box.checked && fallBox.box.checked;
+                filterAll(seasonBoxes, authorBox, yearBox, authorInput.value, yearInput.value, data);
             }));
             summerBox.box.addEventListener("click", (event => {
-                filterAll(seasonBoxes, authorBox, yearBox, authorInput.value, value.textContent, data)
+                allBox.checked = winterBox.box.checked && springBox.box.checked && summerBox.box.checked && fallBox.box.checked;
+                filterAll(seasonBoxes, authorBox, yearBox, authorInput.value, yearInput.value, data);
             }));
             fallBox.box.addEventListener("click", (event => {
-                filterAll(seasonBoxes, authorBox, yearBox, authorInput.value, value.textContent, data)
+                allBox.checked = winterBox.box.checked && springBox.box.checked && summerBox.box.checked && fallBox.box.checked;
+                filterAll(seasonBoxes, authorBox, yearBox, authorInput.value, yearInput.value, data);
             }));
 
-            
             yearInput.addEventListener("input", (event) => {
-                //yearBox.checked = true
                 value.textContent = event.target.value;
-                filterAll(seasonBoxes, authorBox, yearBox, authorInput.value, value.textContent, data)
-
+                if (!uniqueAuthor.includes(authorInput.value)) {
+                    filterAll(seasonBoxes, false, yearBox, authorInput.value, yearInput.value, data)
+                }
             });
 
         
             let authorInput = document.querySelector('#author_input')
             authorInput.addEventListener("input", (event) => {
-                if (unique_author.includes(authorInput.value)) {
-                    //authorBox.checked = true
-                    console.log(authorInput.value)
-                    filterAll(seasonBoxes, authorBox, yearBox, authorInput.value, value.textContent, data)
+                if (uniqueAuthor.includes(authorInput.value)) {
+                    filterAll(seasonBoxes, authorBox, yearBox, authorInput.value, yearInput.value, data)
                 }
             });
-            authorButton.addEventListener("click", (event => {
-                if (unique_author.includes(authorInput.value)) {
-                    authorBox.checked = !authorBox.checked
-                    console.log(authorInput.value)
-                    console.log(authorBox.checked)
-                    filterAll(seasonBoxes, authorBox, yearBox, authorInput.value, value.textContent, data)
-                }
-            }));
 
 
         })

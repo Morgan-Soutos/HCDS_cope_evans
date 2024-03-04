@@ -112,66 +112,71 @@
                 data.push(circle);
             }
             
-            seasonMarkers = data
-
 
             function filterAll(seasonsBoxes, authorBox, yearBox, authorInput, yearInput, data) {
-                data.forEach((marker) => {
-                    map.removeLayer(marker)
-                });
                 for (let i = 0; i < data.length; i ++) {
-                seasonsBoxes.forEach((seasonBox) => {
-                    if (seasonBox.box.checked) { //seasonBox checked 
-                        if (authorBox.checked) { //season, author boxes checked
-                            if (yearBox.checked) { //season, author, year boxes checked
-                                if (authors[i] == authorInput && years[i] == yearInput && seasons[i] == seasonBox.name) {
-                                        data[i].addTo(map);
+                    map.removeLayer(data[i])
+                    unchecked_seasons = []
+                    seasonsBoxes.forEach((seasonsBox) => {
+                        if (!seasonsBox.box.checked) {
+                            unchecked_seasons.push(seasonsBox.name)
+                        }
+                    });
+
+                    seasonsBoxes.forEach((seasonBox) => {
+                        if (seasonBox.box.checked) { //seasonBox checked 
+                            if (authorBox.checked) { //season, author boxes checked
+                                if (yearBox.checked) { //season, author, year boxes checked
+                                    if (authors[i] == authorInput && years[i] == yearInput && seasons[i] == seasonBox.name) {
+                                            data[i].addTo(map);
+                                    }
+                                }
+                                else { //season, author boxes checked
+                                    if (authors[i] == authorInput && seasons[i] == box.name) {
+                                        data[i].addTo(map)
+                                    }
                                 }
                             }
-                            else { //season, author boxes checked
-                                if (authors[i] == authorInput && seasons[i] == box.name) {
-                                    data[i].addTo(map)
+                            else { //author box not checked
+                                if (yearBox.checked) { //season, year boxes checked
+                                    if (years[i] == yearInput && seasons[i] == seasonBox.name) {
+                                        data[i].addTo(map)
+                                    }
+                                }
+                                else { //only season box checked
+                                    if (seasons[i] == seasonBox.name) {
+                                        data[i].addTo(map)
+                                    }
                                 }
                             }
                         }
-                        else { //author box not checked
-                            if (yearBox.checked) { //season, year boxes checked
-                                if (years[i] == yearInput && seasons[i] == seasonBox.name) {
-                                    data[i].addTo(map)
+                        else { //season box not checked
+                            if (authorBox.checked) { 
+                                if (yearBox.checked) { //season box not checked, author and year boxes checked
+                                    if (authors[i] == authorInput && year[i] == yearInput) {
+                                        data[i].addTo(map)
+                                    }
+                                }
+                                else { //only author box checked
+                                    if (authors[i] == authorInput) {
+                                        data[i].addTo(map)
+                                    }
                                 }
                             }
-                            else { //only season box checked
-                                if (seasons[i] == seasonBox.name) {
-                                    data[i].addTo(map)
+                            else {
+                                if (yearBox.checked) { //season, author boxes not checked, year checked
+                                    if (year[i] == yearInput) {
+                                        data[i].addTo(map)
+                                    }
+                                }
+                                else { //no boxes checked
+                                    if (!unchecked_seasons.includes(seasons[i])) { //need to check *all* filtered out seasons
+                                        data[i].addTo(map)
+                                    }
                                 }
                             }
                         }
-                    }
-                    else { //season box not checked
-                        if (authorBox.checked) { 
-                            if (yearBox.checked) { //season box not checked, author and year boxes checked
-                                if (authors[i] == authorInput && year[i] == yearInput) {
-                                    data[i].addTo(map)
-                                }
-                            }
-                            else { //only author box checked
-                                if (authors[i] == authorInput) {
-                                    data[i].addTo(map)
-                                }
-                            }
-                        }
-                        else {
-                            if (yearBox.checked) { //season, author boxes not checked, year checked
-                                if (year[i] == yearInput) {
-                                    data[i].addTo(map)
-                                }
-                            }
-                            else { //no boxes checked
-                                data[i].addTo(map)
-                            }
-                        }
-                    }
-                });
+                    });
                 }
             }
 

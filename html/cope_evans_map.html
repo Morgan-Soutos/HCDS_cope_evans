@@ -246,9 +246,11 @@
                 if (!uniqueAuthor.includes(authorInput.value)) {
                     filterAll(seasonBoxes, false, yearBox, authorInput.value, yearInput.value, data)
                 }
+                else {
+                    filterAll(seasonBoxes, authorBox, yearBox, authorInput.value, yearInput.value, data)
+                }
             });
 
-        
             let authorInput = document.querySelector('#author_input')
             authorInput.addEventListener("input", (event) => {
                 if (uniqueAuthor.includes(authorInput.value)) {

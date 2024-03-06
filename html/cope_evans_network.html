@@ -5,13 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://d3js.org/d3.v4.js"></script>
-    <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
     <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
 
-    
 </head>
 <body>
-    <div id="network" width = '1000' height = '1000'>
+    <div id="network">
     </div>
     
     <script>
@@ -48,11 +46,6 @@
                 return count
             }
 
-            /* for (let i = 0; i < location.length; i++) {
-                if (!unique_locations.includes(location[i])) {
-                    unique_locations.push(location[i])
-                }
-            } */
 
             for (let i = 0; i < origin.length; i++) {
                 if (!unique_locations.includes(origin[i])) { //can't have repeat locations for nodes

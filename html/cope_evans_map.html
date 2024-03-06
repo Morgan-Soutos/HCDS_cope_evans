@@ -65,9 +65,9 @@
                 month = unpack(rows, 'Month'),
                 day = unpack(rows, 'Day'),
                 color = unpack(rows, 'Color'),
-                seasons = unpack(rows, 'Season')
+                seasons = unpack(rows, 'Season');
               
-            let uniqueAuthor = []
+            let uniqueAuthor = [];
             for (let i = 0; i < authors.length; i++) {
                 if (!uniqueAuthor.includes(authors[i])) {
                     uniqueAuthor.push(authors[i])
@@ -103,7 +103,7 @@
                     fillColor: color[i],
                     radius: 2,
                 })
-                .bindPopup(title[i] +  '<br /> By: ' + authors[i] + '<br /> To: ' + recipient[i] + '<br /> Season: ' + seasons[i] + '<br /> Year: ' + years[i])
+                .bindPopup(title[i] +  '<br /> By: ' + authors[i] + '<br /> To: ' + recipient[i] + '<br /> Season: ' + seasons[i] + ' Year: ' + years[i])
                 .addTo(map);
 
                 data.push(circle);

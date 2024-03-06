@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-data-adapter.min.js"></script>
+
+    <style>
+        div.container {
+            height: 500px;
+            max-width: 100%;;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="container", class="container"></div>
+
+
+    <script>
+        d3.csv('/csv/processed_sample_data.csv', function(err, rows) {
+            function unpack(rows, key) {
+                return rows.map(function(row) {return row[key];}); 
+            }
+            let origin = unpack(rows, 'Origin'),
+                title = unpack(rows, 'Title'),
+                authors = unpack(rows, 'Author'),
+                recipient = unpack(rows, 'Recipient')
+                lat = unpack(rows, 'start_lat'),
+                long = unpack(rows, 'start_long'),
+                years = unpack(rows, 'Year'),
+                month = unpack(rows, 'Month'),
+                day = unpack(rows, 'Day'),
+                color = unpack(rows, 'Color'),
+                seasons = unpack(rows, 'Season')
+
+            let minYear = Math.min.apply(null, years),
+                maxYear = Math.max.apply(null, years);
+            let uniqueYears = [];
+            for (let i = minYear; i <= maxYear; i++) {
+                uniqueYears.push(i)
+            }
+            let uniqueMonths = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+
+            let winterData = [],
+                springData = [],
+                summerData = [],
+                fallData = [];
+
+            let data = [];
+
+            for (let i = 0; i < title.length; i++) {
+                yVal = Number(month[i])
+                if (['January', 'March', 'May', 'July', 'August', 'October', 'December'].includes(month[i])) {
+                    yVal += (day[i] / 32)
+                }
+                else if (['April', 'June', 'September', 'November']){
+                    yVal += (day[i] / 31)
+                }
+                else {
+                    if (years[i] % 4 == 0) {
+                        yVal += (day[i] / 30)
+                    }
+                    else {
+                        yVal += (day[i] / 29)
+                    }
+                }
+
+                data.push({x: years[i], y: yVal})
+/*                 if (seasons[i] == 'Winter') {
+                    winterData.push({x: years[i], y: yVal})
+                }
+                if (seasons[i] == 'Spring') {
+                    springData.push({x: years[i], y: yVal})
+                }
+                if (seasons[i] == 'Summer') {
+                    summerData.push({x: years[i], y: yVal})
+                }
+                if (seasons[i] == 'Fall') {
+                    fallData.push({x: years[i], y: yVal})
+                } */
+            }
+
+            let yLabels = {1: 'January', 2: 'February', 3: 'March', 4: 'April', 5: 'May', 6: 'June', 7: 'July', 8: 'August', 9: 'September', 10: 'October', 11: 'November', 12: 'December'}
+
+            let chart = anychart.scatter();
+            chart.height('500px')
+            chart.width('1000px')
+    
+            let marker = chart.marker(data);
+            marker.type("circle").size(2)
+            chart.xAxis().title("Year");
+            chart.yAxis().title("Month");
+            chart.yScale().ticks().set([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]);
+            chart.yAxis().labels().format(function() {
+            return yLabels[this.value];
+            });
+            
+            chart.container("container");
+            chart.draw();
+
+        });
+    </script>
+</body>
+</html>

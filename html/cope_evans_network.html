@@ -51,7 +51,6 @@
                 if (!unique_locations.includes(origin[i])) { //can't have repeat locations for nodes
                     nodes.push({id: origin[i],  label: origin[i], value: (count_element(location, origin[i]))});
                     unique_locations.push(origin[i])
-
                 }
                 if (!unique_locations.includes(destination[i])) { 
                     nodes.push({id: destination[i],  label: destination[i], value: (count_element(location, destination[i]))});
@@ -79,9 +78,6 @@
 
         let network = new vis.Network(container, data, options);
         
-        /* network.on( 'click', function(properties) { //probably not worth getting this working, not especially important
-            console.log(properties.nodes);
-        }); */
 
         })
     

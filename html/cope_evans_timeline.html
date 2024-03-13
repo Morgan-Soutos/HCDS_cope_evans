@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://d3js.org/d3.v4.js"></script>
-    <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-base.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-data-adapter.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-2.29.1.min.js" charset="utf-8"></script>
 
     <style>
         div.container {
@@ -18,10 +17,11 @@
 <body>
     
     <div id="container", class="container"></div>
-
+    <input id= "author_input" type= "text" placeholder= "Last name, first name", list = 'author_list' style="width: 600px;">
+    <datalist id = "author_list"></datalist>
 
     <script>
-        d3.csv('/csv/processed_sample_data.csv', function(err, rows) {
+        d3.csv('/csv/processed_sample_data_timeline.csv', function(err, rows) {
             function unpack(rows, key) {
                 return rows.map(function(row) {return row[key];}); 
             }
@@ -36,7 +36,10 @@
                 day = unpack(rows, 'Day'),
                 color = unpack(rows, 'Color'),
                 seasons = unpack(rows, 'Season')
+                date = unpack(rows, 'Date Created')
 
+            
+            
             let minYear = Math.min.apply(null, years),
                 maxYear = Math.max.apply(null, years);
             let uniqueYears = [];
@@ -52,56 +55,99 @@
 
             let data = [];
 
-            for (let i = 0; i < title.length; i++) {
-                yVal = Number(month[i])
-                if (['January', 'March', 'May', 'July', 'August', 'October', 'December'].includes(month[i])) {
-                    yVal += (day[i] / 32)
+            let uniqueAuthor = [];
+            for (let i = 0; i < authors.length; i++) {
+                if (!uniqueAuthor.includes(authors[i])) {
+                    uniqueAuthor.push(authors[i])
                 }
-                else if (['April', 'June', 'September', 'November']){
-                    yVal += (day[i] / 31)
-                }
-                else {
-                    if (years[i] % 4 == 0) {
-                        yVal += (day[i] / 30)
-                    }
-                    else {
-                        yVal += (day[i] / 29)
-                    }
-                }
+            }
+            let list = document.getElementById('author_list')
+            uniqueAuthor.forEach(function(item) {
+                let option = document.createElement('option');
+                option.value = item;
+                list.appendChild(option);
+            })
 
-                data.push({x: years[i], y: yVal})
-/*                 if (seasons[i] == 'Winter') {
-                    winterData.push({x: years[i], y: yVal})
+            for (let i = 0; i < uniqueAuthor.length; i ++) {
+                let x = [],
+                    y = [],
+                    text = [];
+                name = uniqueAuthor[i]
+
+                for (let j = 0; j < title.length; j ++) {
+                    if (authors[j] == name) {
+                        x.push(years[j])
+                        yVal = Number(month[j])
+                        if (['January', 'March', 'May', 'July', 'August', 'October', 'December'].includes(month[i])) {
+                            yVal += (day[j] / 32)
+                        }
+                        else if (['April', 'June', 'September', 'November']){
+                            yVal += (day[j] / 31)
+                        }
+                        else {
+                            if (years[j] % 4 == 0) {
+                                yVal += (day[j] / 30)
+                            }
+                            else {
+                                yVal += (day[j] / 29)
+                            }
+                        }
+                        y.push(yVal)
+                        text.push('Author: ' + uniqueAuthor[i] + '<br>Title: ' + title[j] + '<br>Sent: ' + date[j])
+                    }
                 }
-                if (seasons[i] == 'Spring') {
-                    springData.push({x: years[i], y: yVal})
+                data.push({
+                    x: x,
+                    y: y,
+                    mode: 'markers',
+                    type: 'scatter',
+                    hoverinfo: uniqueAuthor[i], //doesn't actually do anything on its own, but allows for disabling traces by text input
+                    name: '',
+                    hovertemplate: text,
+                    marker: {size: 5}
+                })
+             }
+
+
+            let layout = {
+                xaxis: {
+                    range: [1820, 1920]
+                },
+                yaxis: {
+                    tickmode: "array",
+                    tickvals: [1, 2, 3, 4 ,5, 6, 7, 8, 9, 10, 11, 12],
+                    ticktext: uniqueMonths
+                },
+                title:'Cope Evans Timeline',
+                showlegend: false
+                };
+
+            
+            let config = {responsive: true}
+            Plotly.newPlot('container', data, layout, config);
+
+            function filter(authorInput) {
+                for (let i = 0; i < uniqueAuthor.length; i++) {
+                    data[i].visible = "legendonly"
+                    if (authorInput == data[i].hoverinfo) {
+                        data[i].visible = true
+                    }
+                    else if (authorInput == '') {
+                        data[i].visible = true
+                    }
                 }
-                if (seasons[i] == 'Summer') {
-                    summerData.push({x: years[i], y: yVal})
-                }
-                if (seasons[i] == 'Fall') {
-                    fallData.push({x: years[i], y: yVal})
-                } */
+                Plotly.newPlot('container', data, layout, config)
             }
 
-            let yLabels = {1: 'January', 2: 'February', 3: 'March', 4: 'April', 5: 'May', 6: 'June', 7: 'July', 8: 'August', 9: 'September', 10: 'October', 11: 'November', 12: 'December'}
-
-            let chart = anychart.scatter();
-            chart.height('500px')
-            chart.width('1000px')
-    
-            let marker = chart.marker(data);
-            marker.type("circle").size(2)
-            chart.xAxis().title("Year");
-            chart.yAxis().title("Month");
-            chart.yScale().ticks().set([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]);
-            chart.yAxis().labels().format(function() {
-            return yLabels[this.value];
+            let authorInput = document.querySelector('#author_input')
+            authorInput.addEventListener("input", (event) => {
+                if (uniqueAuthor.includes(authorInput.value)) {
+                    filter(authorInput.value)
+                }
+                else {
+                    filter('')
+                }
             });
-            
-            chart.container("container");
-            chart.draw();
-
         });
     </script>
 </body>

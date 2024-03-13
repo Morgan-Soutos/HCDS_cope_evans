@@ -45,4 +45,4 @@ color_dict = {'Spring': 'green', 'Summer': 'yellow', 'Fall': 'orange', 'Winter':
 
 data = data.replace({'Color': color_dict})
 
-data.to_csv('csv/processed_sample_data.csv')
+data.to_csv('csv/processed_sample_data_map.csv')

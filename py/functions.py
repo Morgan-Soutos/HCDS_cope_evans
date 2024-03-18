@@ -65,6 +65,10 @@ def extract_date(data: pd.DataFrame, date_name: str) -> pd.DataFrame:
     Returns:
         data (pd.Dataframe): The input dataframe with new columns for Year, Month, and Day
     '''
+
+    
+    data = data[~data[date_name].str.contains('~')] #some entries have an estimate for the year, drop these
+
     data['Year'] = data[date_name].apply(lambda x: x[0:4])
     data['Month'] = data[date_name].apply(lambda x: x[5:7])
     data['Day'] = data[date_name].apply(lambda x: x[8:10])
@@ -72,3 +76,12 @@ def extract_date(data: pd.DataFrame, date_name: str) -> pd.DataFrame:
         data[column] = data[column].replace('', 0)
         data[column] = data[column].astype(int)
     return data
+
+def create_location_dict(data, strings):
+    locations = data['Origin']._append(data['Destination']).unique()
+    location_dict = {}
+    for string in strings:
+        for location in locations:
+            if string in location:
+                location_dict[location] = string
+    return location_dict

@@ -2,7 +2,7 @@ import pandas as pd
 from functions import *
 
 geo = pd.read_csv('csv/location and islandora - Finalized Geocoding.csv')
-letters = pd.read_csv('csv/location and islandora - Data Sample (Box 3).csv')
+letters = pd.read_csv('csv/location and islandora - 1820-1920.csv')
 
 data = letters[['Title', 'Description', 'Date Created', 'Origin', 'Author', 'Recipient']]
 data = process(data, ['Origin', 'Date Created'])
@@ -41,8 +41,8 @@ data = data.replace({'Season': season_dict})
 
 data['Color'] = data['Season']
 
-color_dict = {'Spring': 'green', 'Summer': 'yellow', 'Fall': 'orange', 'Winter': 'lightskyblue'}
+color_dict = {'Spring': 'green', 'Summer': 'yellow', 'Fall': 'orange', 'Winter': 'darkred'}
 
 data = data.replace({'Color': color_dict})
 
-data.to_csv('csv/processed_sample_data_map.csv')
+data.to_csv('csv/processed_data_map.csv')

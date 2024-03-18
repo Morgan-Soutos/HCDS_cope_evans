@@ -21,7 +21,7 @@
     <datalist id = "author_list"></datalist>
 
     <script>
-        d3.csv('/csv/processed_sample_data_timeline.csv', function(err, rows) {
+        d3.csv('/csv/processed_data_timeline.csv', function(err, rows) {
             function unpack(rows, key) {
                 return rows.map(function(row) {return row[key];}); 
             }
@@ -48,11 +48,6 @@
             }
             let uniqueMonths = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 
-            let winterData = [],
-                springData = [],
-                summerData = [],
-                fallData = [];
-
             let data = [];
 
             let uniqueAuthor = [];
@@ -71,25 +66,24 @@
             for (let i = 0; i < uniqueAuthor.length; i ++) {
                 let x = [],
                     y = [],
-                    text = [];
-                name = uniqueAuthor[i]
+                    text = []
 
                 for (let j = 0; j < title.length; j ++) {
-                    if (authors[j] == name) {
+                    if (authors[j] == uniqueAuthor[i]) {
                         x.push(years[j])
                         yVal = Number(month[j])
                         if (['January', 'March', 'May', 'July', 'August', 'October', 'December'].includes(month[i])) {
-                            yVal += (day[j] / 32)
+                            yVal += (Number(day[j]) / 32)
                         }
                         else if (['April', 'June', 'September', 'November']){
-                            yVal += (day[j] / 31)
+                            yVal += (Number(day[j]) / 31)
                         }
                         else {
                             if (years[j] % 4 == 0) {
-                                yVal += (day[j] / 30)
+                                yVal += (Number(day[j]) / 30)
                             }
                             else {
-                                yVal += (day[j] / 29)
+                                yVal += (Number(day[j]) / 29)
                             }
                         }
                         y.push(yVal)
@@ -111,14 +105,14 @@
 
             let layout = {
                 xaxis: {
-                    range: [1820, 1920]
+                    range: [1815, 1925]
                 },
                 yaxis: {
                     tickmode: "array",
                     tickvals: [1, 2, 3, 4 ,5, 6, 7, 8, 9, 10, 11, 12],
                     ticktext: uniqueMonths
                 },
-                title:'Cope Evans Timeline',
+                title:'Timeline',
                 showlegend: false
                 };
 

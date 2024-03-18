@@ -12,9 +12,21 @@
 
     <style>
         div.test {
-          height: 200px;
-          /* max-width: 100%; */
+          height: 300px;
+          max-width: 100%;
           z-index: 0;
+        }
+        /* Legend code from https://leafletjs.com/examples/choropleth/ */
+        .legend {
+            line-height: 18px;
+            color: #555;
+        }
+        .legend i {
+            width: 18px;
+            height: 18px;
+            float: left;
+            margin-right: 8px;
+            opacity: 0.7;
         }
     </style> 
 </head>
@@ -52,7 +64,7 @@
     </fieldset>
     
     <script>
-        d3.csv('/csv/processed_sample_data_map.csv', function(err, rows) {
+        d3.csv('/csv/processed_data_map.csv', function(err, rows) {
             function unpack(rows, key) {
                 return rows.map(function(row) {return row[key];}); 
             }
@@ -105,7 +117,7 @@
                     fillColor: color[i],
                     radius: 2,
                 })
-                .bindPopup(title[i] +  '<br /> By: ' + authors[i] + '<br /> To: ' + recipient[i] + '<br /> Season: ' + seasons[i] + ' Year: ' + years[i])
+                .bindPopup(title[i] +  '<br />' + authors[i] + '<br />' + recipient[i] + '<br /> Season: ' + seasons[i] + '<br /> Year: ' + years[i] + '<br /> Origin: ' + origin[i])
                 .addTo(map);
 
                 data.push({'marker': circle, 'season': seasons[i], 'author': authors[i], 'year': Number(years[i])});
@@ -253,6 +265,26 @@
                 filterMap()
             });
 
+            /* Below adapted from https://leafletjs.com/examples/choropleth/ */
+            let legend = L.control({position: 'bottomright'});
+
+            legend.onAdd = function (map) {
+
+                let div = L.DomUtil.create('div', 'info legend'),
+                    grades = ['Winter', 'Spring', 'Summer', 'Fall'],
+                    colors = ['darkred', 'green', 'yellow', 'orange'];
+
+                // loop through our density intervals and generate a label with a colored square for each interval
+                for (let i = 0; i < grades.length; i++) {
+                    div.innerHTML +=
+                        '<i style="background:' + colors[i] + '"></i> ' +
+                        grades[i] + '</br>';
+                }
+
+                return div;
+            };
+
+            legend.addTo(map);
 
         })
         

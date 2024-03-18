@@ -1,0 +1,910 @@
+,Origin,Destination
+3,Philadelphia (Pa.),Salem (N.J.)
+4,Chester County (Pa.),Philadelphia (Pa.)
+7,Trenton (N.J.),Philadelphia (Pa.)
+9,Kingwood (N.J. : Township),Philadelphia (Pa.)
+14,Liverpool (England),Philadelphia (Pa.)
+15,Liverpool (England),Philadelphia (Pa.)
+16,Philadelphia (Pa.),Greensburg (Pa.)
+18,"Henlopen, Cape (Del.)",Philadelphia (Pa.)
+19,Liverpool (England),Philadelphia (Pa.)
+21,Liverpool (England),Philadelphia (Pa.)
+22,Liverpool (England),Philadelphia (Pa.)
+40,Philadelphia (Pa.),Burlington (N.J.)
+48,Philadelphia (Pa.),Burlington (N.J.)
+52,Philadelphia (Pa.),Baltimore (Md.)
+55,Philadelphia (Pa.),Rockway (N.J.)
+56,Philadelphia (Pa.),New York (N.Y.)
+57,Philadelphia (Pa.),Tottenham (England)
+58,Jim Thorpe (Pa.),Philadelphia (Pa.)
+61,Luzerne County (Pa.),Philadelphia (Pa.)
+64,"Montrose (Susquehanna County, Pa.)",Philadelphia (Pa.)
+65,"Montrose (Susquehanna County, Pa.)",Philadelphia (Pa.)
+68,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+69,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+70,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+72,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+73,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+76,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+78,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+80,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+82,Philadelphia (Pa.),Albany (N.Y.)
+83,Boston (Mass.),Philadelphia (Pa.)
+86,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+88,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+89,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+90,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+91,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+92,Buffalo (N.Y.),Philadelphia (Pa.)
+93,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+94,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+95,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+96,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+97,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+98,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+101,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+102,Liverpool (England),Philadelphia (Pa.)
+105,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+108,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+110,Philadelphia (Pa.),Deal (N.J.)
+115,Harrisburg (Pa.),Philadelphia (Pa.)
+116,Harrisburg (Pa.),Philadelphia (Pa.)
+118,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+120,Harrisburg (Pa.),Philadelphia (Pa.)
+121,Harrisburg (Pa.),Philadelphia (Pa.)
+125,Harrisburg (Pa.),Philadelphia (Pa.)
+126,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+127,Harrisburg (Pa.),Philadelphia (Pa.)
+128,Washington (D.C.),Philadelphia (Pa.)
+129,Harrisburg (Pa.),Philadelphia (Pa.)
+130,New York (N.Y.),Philadelphia (Pa.)
+135,Philadelphia (Pa.),Woodstown (N.J.)
+136,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+137,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+138,"Middletown (Delaware County, Pa. : Township)",Philadelphia (Pa.)
+139,"Salem (Winston-Salem, N.C.)",Philadelphia (Pa.)
+140,New York (N.Y.),Philadelphia (Pa.)
+141,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+147,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+148,Philadelphia (Pa.),Sunbury (Pa.)
+150,Philadelphia (Pa.),"Woodbourne (Susquehanna County, Pa.)"
+151,"Germantown (Philadelphia, Pa.)","Woodbourne (Susquehanna County, Pa.)"
+152,Philadelphia (Pa.),"Easton (Northampton County, Pa.)"
+153,Philadelphia (Pa.),"Easton (Northampton County, Pa.)"
+156,Bristol (Pa.),Philadelphia (Pa.)
+162,Philadelphia (Pa.),Deal (N.J.)
+163,Philadelphia (Pa.),Long Branch (N.J.)
+164,"Salem (Winston-Salem, N.C.)",Philadelphia (Pa.)
+165,Auburn (N.J.),Deal (N.J.)
+166,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+168,Philadelphia (Pa.),Eatontown (N.J.)
+170,Philadelphia (Pa.),"Woodbourne (Susquehanna County, Pa.)"
+171,East Marlborough (Pa. : Township),Philadelphia (Pa.)
+172,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+175,Bristol (Pa.),"Woodbourne (Susquehanna County, Pa.)"
+177,Philadelphia (Pa.),Burlington (N.J.)
+178,Philadelphia (Pa.),Liverpool (England)
+179,Philadelphia (Pa.),England
+180,Philadelphia (Pa.),Liverpool (England)
+182,Bristol (Pa.),Philadelphia (Pa.)
+187,Philadelphia (Pa.),Madeira (Madeira Islands)
+188,Philadelphia (Pa.),Madeira (Madeira Islands)
+189,Philadelphia (Pa.),Madeira (Madeira Islands)
+193,Philadelphia (Pa.),Madeira (Madeira Islands)
+194,Philadelphia (Pa.),Madeira (Madeira Islands)
+195,Philadelphia (Pa.),Madeira (Madeira Islands)
+196,Bristol (Pa.),Philadelphia (Pa.)
+197,Louisville (Ky.),Philadelphia (Pa.)
+198,New York (N.Y.),Philadelphia (Pa.)
+199,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+200,Philadelphia (Pa.),Liverpool (England)
+201,Philadelphia (Pa.),London (England)
+202,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+203,"Woodbourne (Susquehanna County, Pa.)",Liverpool (England)
+204,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+207,Philadelphia (Pa.),Liverpool (England)
+208,Rouen (France),Philadelphia (Pa.)
+209,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+210,Haverford (Pa. : Township),Philadelphia (Pa.)
+211,Haverford (Pa. : Township),Philadelphia (Pa.)
+212,Haverford (Pa. : Township),Philadelphia (Pa.)
+213,Haverford (Pa. : Township),Philadelphia (Pa.)
+214,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+215,Haverford (Pa. : Township),Philadelphia (Pa.)
+216,Haverford (Pa. : Township),Philadelphia (Pa.)
+217,Haverford (Pa. : Township),Philadelphia (Pa.)
+218,Haverford (Pa. : Township),Philadelphia (Pa.)
+219,Haverford (Pa. : Township),Philadelphia (Pa.)
+220,Philadelphia (Pa.),Haverford (Pa. : Township)
+221,"Springfield (Delaware County, Pa. : Township)",Philadelphia (Pa.)
+222,Philadelphia (Pa.),Haverford (Pa. : Township)
+223,Haverford (Pa. : Township),Philadelphia (Pa.)
+224,Haverford (Pa. : Township),Philadelphia (Pa.)
+226,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+227,Haverford (Pa. : Township),Philadelphia (Pa.)
+228,Haverford (Pa. : Township),Philadelphia (Pa.)
+229,Liverpool (England),Philadelphia (Pa.)
+230,Philadelphia (Pa.),Haverford (Pa. : Township)
+231,Haverford (Pa. : Township),Philadelphia (Pa.)
+232,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+233,Haverford (Pa. : Township),Philadelphia (Pa.)
+234,Haverford (Pa. : Township),Philadelphia (Pa.)
+235,Haverford (Pa. : Township),Philadelphia (Pa.)
+237,Haverford (Pa. : Township),Philadelphia (Pa.)
+238,Philadelphia (Pa.),Haverford (Pa. : Township)
+239,Haverford (Pa. : Township),Philadelphia (Pa.)
+240,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+241,Haverford (Pa. : Township),Philadelphia (Pa.)
+243,Haverford (Pa. : Township),Philadelphia (Pa.)
+244,Philadelphia (Pa.),Haverford (Pa. : Township)
+246,Burlington (N.J.),Philadelphia (Pa.)
+247,Philadelphia (Pa.),Haverford (Pa. : Township)
+248,Haverford (Pa. : Township),Philadelphia (Pa.)
+249,Philadelphia (Pa.),Haverford (Pa. : Township)
+250,Haverford (Pa. : Township),Philadelphia (Pa.)
+251,Haverford (Pa. : Township),Philadelphia (Pa.)
+252,Philadelphia (Pa.),Haverford (Pa. : Township)
+253,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+254,Haverford (Pa. : Township),Philadelphia (Pa.)
+255,Haverford (Pa. : Township),Philadelphia (Pa.)
+256,Haverford (Pa. : Township),Philadelphia (Pa.)
+257,Haverford (Pa. : Township),Philadelphia (Pa.)
+258,Wheeling (W. Va.),Philadelphia (Pa.)
+259,Haverford (Pa. : Township),Philadelphia (Pa.)
+261,Haverford (Pa. : Township),Philadelphia (Pa.)
+262,Haverford (Pa. : Township),Philadelphia (Pa.)
+263,Haverford (Pa. : Township),Philadelphia (Pa.)
+264,Haverford (Pa. : Township),Philadelphia (Pa.)
+265,Haverford (Pa. : Township),Philadelphia (Pa.)
+266,Newport (R.I.),Haverford (Pa. : Township)
+268,Haverford (Pa. : Township),"Mt. Pleasant (Jefferson County, Ohio)"
+269,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+270,Philadelphia (Pa.),Haverford (Pa. : Township)
+271,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+272,Bristol (Pa.),Philadelphia (Pa.)
+273,Haverford (Pa. : Township),Philadelphia (Pa.)
+274,Haverford (Pa. : Township),Philadelphia (Pa.)
+275,Haverford (Pa. : Township),Philadelphia (Pa.)
+278,Haverford (Pa. : Township),Philadelphia (Pa.)
+279,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+283,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+284,Haverford (Pa. : Township),Philadelphia (Pa.)
+286,Haverford (Pa. : Township),Philadelphia (Pa.)
+287,Harrisburg (Pa.),Philadelphia (Pa.)
+292,Haverford (Pa. : Township),Philadelphia (Pa.)
+293,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+294,Harrisburg (Pa.),Philadelphia (Pa.)
+296,Harrisburg (Pa.),Philadelphia (Pa.)
+297,Haverford (Pa. : Township),Philadelphia (Pa.)
+298,Philadelphia (Pa.),Harrisburg (Pa.)
+299,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+300,Harrisburg (Pa.),Philadelphia (Pa.)
+301,Harrisburg (Pa.),Philadelphia (Pa.)
+302,Haverford (Pa. : Township),Philadelphia (Pa.)
+303,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+305,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+306,Philadelphia (Pa.),"Woodbourne (Susquehanna County, Pa.)"
+307,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+308,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+309,Haverford (Pa. : Township),Philadelphia (Pa.)
+311,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+312,Haverford (Pa. : Township),Philadelphia (Pa.)
+313,Haverford (Pa. : Township),Philadelphia (Pa.)
+314,Haverford (Pa. : Township),Philadelphia (Pa.)
+315,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+316,Baltimore (Md.),Philadelphia (Pa.)
+317,Norfolk (Va.),Philadelphia (Pa.)
+319,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+320,Charleston (S.C.),Haverford (Pa. : Township)
+321,Savannah (Ga.),Philadelphia (Pa.)
+322,Charleston (S.C.),Philadelphia (Pa.)
+323,Haverford (Pa. : Township),Philadelphia (Pa.)
+324,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+325,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+326,Salem (Mass.),Philadelphia (Pa.)
+327,Philadelphia (Pa.),Salem (Mass.)
+331,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+332,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+333,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+334,Haverford (Pa. : Township),Philadelphia (Pa.)
+335,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+336,Paris (France),Philadelphia (Pa.)
+337,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+338,Philadelphia (Pa.),"Woodbourne (Susquehanna County, Pa.)"
+339,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+340,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+342,Philadelphia (Pa.),"Germantown (Philadelphia, Pa.)"
+344,Newport (R.I.),Philadelphia (Pa.)
+345,Newport (R.I.),Philadelphia (Pa.)
+348,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+349,Philadelphia (Pa.),London Grove (Pa. : Township)
+351,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+353,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+354,New Bedford (Mass.),Philadelphia (Pa.)
+355,New Bedford (Mass.),Philadelphia (Pa.)
+356,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+357,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+358,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+360,Philadelphia (Pa.),West Chester (Pa.)
+361,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+362,Boston (Mass.),Philadelphia (Pa.)
+364,Boston (Mass.),Philadelphia (Pa.)
+365,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+366,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+369,New Bedford (Mass.),Philadelphia (Pa.)
+370,Trenton (N.J.),"Woodbourne (Susquehanna County, Pa.)"
+371,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+374,Schooleys Mountain (N.J.),Philadelphia (Pa.)
+375,Chester (Pa.),Philadelphia (Pa.)
+376,Philadelphia (Pa.),"Woodbourne (Susquehanna County, Pa.)"
+377,Philadelphia (Pa.),"Woodbourne (Susquehanna County, Pa.)"
+379,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+380,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+381,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+382,Washington (D.C.),Philadelphia (Pa.)
+389,Philadelphia (Pa.),Cape May (N.J.)
+390,Philadelphia (Pa.),Cape May (N.J.)
+391,Philadelphia (Pa.),Cape May (N.J.)
+392,"Roxborough (Philadelphia, Pa.)",Boston (Mass.)
+395,Boston (Mass.),Salem (Mass.)
+396,Philadelphia (Pa.),Richmond (Ind.)
+398,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+399,Philadelphia (Pa.),Providence (R.I.)
+400,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+402,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+404,"Montrose (Susquehanna County, Pa.)",Philadelphia (Pa.)
+408,Bristol (Pa.),"Woodbourne (Susquehanna County, Pa.)"
+409,Cape May (N.J.),Philadelphia (Pa.)
+412,Camden (N.J.),Philadelphia (Pa.)
+413,Luzerne County (Pa.),Philadelphia (Pa.)
+415,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+416,Philadelphia (Pa.),Philadelphia (Pa.)
+417,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+420,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+423,Trenton (N.J.),"Woodbourne (Susquehanna County, Pa.)"
+424,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+425,Philadelphia (Pa.),Saratoga (N.Y.)
+429,Salem (Mass.),Providence (R.I.)
+430,New York (N.Y.),Philadelphia (Pa.)
+431,New Bedford (Mass.),Philadelphia (Pa.)
+433,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+436,Delaware River (N.Y.-Del. and N.J.),Philadelphia (Pa.)
+440,Geneva (N.Y.),Philadelphia (Pa.)
+441,Quebec (Province),Philadelphia (Pa.)
+442,Lake George (N.Y.),Philadelphia (Pa.)
+443,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+444,New Bedford (Mass.),Philadelphia (Pa.)
+445,Liverpool (England),Philadelphia (Pa.)
+447,Boston (Mass.),Philadelphia (Pa.)
+449,Providence (R.I.),Philadelphia (Pa.)
+451,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+452,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+453,Calcon Hook (Pa.),Philadelphia (Pa.)
+459,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+461,Guilford County (N.C.),Philadelphia (Pa.)
+464,New Bedford (Mass.),Philadelphia (Pa.)
+469,Philadelphia (Pa.),New York (N.Y.)
+470,Luzerne County (Pa.),Philadelphia (Pa.)
+474,Muncy (Pa.),Philadelphia (Pa.)
+475,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+479,Philadelphia (Pa.),Philadelphia (Pa.)
+482,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+483,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+485,Bristol (Pa.),Philadelphia (Pa.)
+487,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+488,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+489,Philadelphia (Pa.),"Woodbourne (Susquehanna County, Pa.)"
+492,Philadelphia (Pa.),Cape May (N.J.)
+493,Philadelphia (Pa.),Cape May (N.J.)
+494,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+495,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+497,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+498,"Woodbourne (Susquehanna County, Pa.)","Germantown (Philadelphia, Pa.)"
+499,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+501,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+502,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+503,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+506,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+508,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+510,Philadelphia (Pa.),"Woodbourne (Susquehanna County, Pa.)"
+511,Westtown (Pa.),Dimock (Pa. : Township)
+512,Philadelphia (Pa.),Cape May (N.J.)
+514,Philadelphia (Pa.),Dimock (Pa. : Township)
+515,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+516,Philadelphia (Pa.),Dimock (Pa. : Township)
+519,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+531,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+534,Philadelphia (Pa.),"Woodbourne (Susquehanna County, Pa.)"
+537,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+539,"Germantown (Philadelphia, Pa.)",Dimock (Pa. : Township)
+542,Philadelphia (Pa.),"Woodbourne (Susquehanna County, Pa.)"
+546,Philadelphia (Pa.),Susquehanna County (Pa.)
+547,Westtown (Pa.),Philadelphia (Pa.)
+551,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+553,"Woodbourne (Susquehanna County, Pa.)","Germantown (Philadelphia, Pa.)"
+559,Westtown (Pa.),Philadelphia (Pa.)
+562,Fairfield (Pa.),Westtown (Pa.)
+567,Iowa Falls (Iowa),"Germantown (Philadelphia, Pa.)"
+576,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+577,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+580,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+583,Wilkes-Barre (Pa.),Philadelphia (Pa.)
+584,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+585,New York (N.Y.),Philadelphia (Pa.)
+586,"Awbury (Philadelphia, Pa.)",North Conway (N.H.)
+593,Newport (R.I.),Philadelphia (Pa.)
+594,Philadelphia (Pa.),Philadelphia (Pa.)
+596,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+611,Philadelphia (Pa.),Philadelphia (Pa.)
+613,Paris (France),London (England)
+614,Paris (France),Philadelphia (Pa.)
+625,"Awbury (Philadelphia, Pa.)","Woodbourne (Susquehanna County, Pa.)"
+631,Great Malvern (England),Philadelphia (Pa.)
+636,Philadelphia (Pa.),"Germantown (Philadelphia, Pa.)"
+654,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+655,New York (N.Y.),Philadelphia (Pa.)
+659,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+662,"Awbury (Philadelphia, Pa.)",Atlantic City (N.J.)
+668,Newport (R.I.),"Awbury (Philadelphia, Pa.)"
+676,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+703,"Awbury (Philadelphia, Pa.)",Newport (R.I.)
+706,Newport (R.I.),Philadelphia (Pa.)
+709,Saint Paul (Minn.),Philadelphia (Pa.)
+710,Saint Paul (Minn.),Philadelphia (Pa.)
+711,Saint Paul (Minn.),Philadelphia (Pa.)
+712,Saint Paul (Minn.),Philadelphia (Pa.)
+713,Saint Paul (Minn.),Philadelphia (Pa.)
+717,"Awbury (Philadelphia, Pa.)",Westtown (Pa.)
+723,Philadelphia (Pa.),Luzerne County (Pa.)
+724,Philadelphia (Pa.),Westtown (Pa.)
+726,Philadelphia (Pa.),Westtown (Pa.)
+728,Philadelphia (Pa.),Washington (D.C.)
+732,Atlantic City (N.J.),Philadelphia (Pa.)
+733,Philadelphia (Pa.),Westtown (Pa.)
+739,Philadelphia (Pa.),Atlantic City (N.J.)
+741,Philadelphia (Pa.),Westtown (Pa.)
+743,Philadelphia (Pa.),Philadelphia (Pa.)
+754,Philadelphia (Pa.),Washington (D.C.)
+761,Liverpool (England),Philadelphia (Pa.)
+762,Liverpool (England),Philadelphia (Pa.)
+765,Philadelphia (Pa.),Washington (D.C.)
+771,Catskill (N.Y.),Philadelphia (Pa.)
+776,Lake George (N.Y.),Philadelphia (Pa.)
+779,Philadelphia (Pa.),Newport (R.I.)
+782,Washington (D.C.),Philadelphia (Pa.)
+789,Lookout Mountain (Appalachian Mountains),Philadelphia (Pa.)
+802,Springfield (Mass.),Philadelphia (Pa.)
+812,Newport (R.I.),"Awbury (Philadelphia, Pa.)"
+818,"Awbury (Philadelphia, Pa.)",Newport (R.I.)
+832,Baltimore (Md.),Philadelphia (Pa.)
+837,Baltimore (Md.),Philadelphia (Pa.)
+838,Baltimore (Md.),Philadelphia (Pa.)
+839,Baltimore (Md.),Philadelphia (Pa.)
+841,Baltimore (Md.),Haverford (Pa. : Township)
+843,Baltimore (Md.),Philadelphia (Pa.)
+848,Lookout Mountain (Appalachian Mountains),"Germantown (Philadelphia, Pa.)"
+859,Newport (R.I.),Philadelphia (Pa.)
+877,"Germantown (Philadelphia, Pa.)","Awbury (Philadelphia, Pa.)"
+902,"Awbury (Philadelphia, Pa.)",Elizabethtown (N.Y.)
+904,Catskill (N.Y.),Philadelphia (Pa.)
+906,Catskill (N.Y.),England
+912,Catskill (N.Y.),England
+919,Newport (R.I.),London (England)
+924,Newport (R.I.),London (England)
+925,Newport (R.I.),England
+926,Newport (R.I.),England
+927,Newport (R.I.),England
+928,Newport (R.I.),England
+929,Newport (R.I.),England
+930,Newport (R.I.),England
+931,Newport (R.I.),England
+981,Hopatcong (N.J.),Philadelphia (Pa.)
+984,Hopatcong (N.J.),Philadelphia (Pa.)
+987,Hopatcong (N.J.),Philadelphia (Pa.)
+988,Hopatcong (N.J.),Philadelphia (Pa.)
+991,Philadelphia (Pa.),New York (N.Y.)
+993,Philadelphia (Pa.),New York (N.Y.)
+995,Cape May (N.J.),Philadelphia (Pa.)
+1012,Haverford (Pa. : Township),Newport (R.I.)
+1018,"Awbury (Philadelphia, Pa.)",Newport (R.I.)
+1020,Baltimore (Md.),"Woodbourne (Susquehanna County, Pa.)"
+1024,"Awbury (Philadelphia, Pa.)",Newport (R.I.)
+1027,Philadelphia (Pa.),Newport (R.I.)
+1028,Philadelphia (Pa.),Newport (R.I)
+1030,Philadelphia (Pa.),Newport (R.I.)
+1036,Snow Shoe (Pa. : Township),"Awbury (Philadelphia, Pa.)"
+1046,New York (N.Y.),Philadelphia (Pa.)
+1057,"Awbury (Philadelphia, Pa.)","Overbrook (Philadelphia, Pa.)"
+1084,"Awbury (Philadelphia, Pa.)",Delaware Water Gap (Pa.)
+1089,Washington (D.C.),Philadelphia (Pa.)
+1092,"Awbury (Philadelphia, Pa.)","Overbrook (Philadelphia, Pa.)"
+1095,Washington (D.C.),Philadelphia (Pa.)
+1099,Washington (D.C.),Philadelphia (Pa.)
+1102,Washington (D.C.),Philadelphia (Pa.)
+1103,Washington (D.C.),Philadelphia (Pa.)
+1104,Washington (D.C.),Philadelphia (Pa.)
+1105,Washington (D.C.),Philadelphia (Pa.)
+1106,Washington (D.C.),Philadelphia (Pa.)
+1111,Philadelphia (Pa.),"Germantown (Philadelphia, Pa.)"
+1112,West Point (N.Y.),"Germantown (Philadelphia, Pa.)"
+1114,Overlook (N.Y.),"Awbury (Philadelphia, Pa.)"
+1117,Washington (D.C.),Philadelphia (Pa.)
+1119,"Awbury (Philadelphia, Pa.)",Liverpool (England)
+1124,London (England),Philadelphia (Pa.)
+1125,Fairfield (Pa.),"Overbrook (Philadelphia, Pa.)"
+1131,Windermere (England),"Germantown (Philadelphia, Pa.)"
+1133,Mount Desert Island (Me.),Philadelphia (Pa.)
+1138,Mount Desert Island (Me.),Philadelphia (Pa.)
+1139,York (England),"Awbury (Philadelphia, Pa.)"
+1140,Philadelphia (Pa.),Bar Harbor (Me.)
+1143,Mount Desert Island (Me.),"Awbury (Philadelphia, Pa.)"
+1144,Washington (D.C.),Philadelphia (Pa.)
+1145,Philadelphia (Pa.),Washington (D.C.)
+1146,Haverford (Pa. : Township),London (England)
+1147,"Awbury (Philadelphia, Pa.)",Luzerne County (Pa.)
+1148,"Awbury (Philadelphia, Pa.)",Luzerne County (Pa.)
+1149,Washington (D.C.),Philadelphia (Pa.)
+1151,"Awbury (Philadelphia, Pa.)","Overbrook (Philadelphia, Pa.)"
+1152,"Overbrook (Philadelphia, Pa.)","Awbury (Philadelphia, Pa.)"
+1154,Atlantic City (N.J.),"Germantown (Philadelphia, Pa.)"
+1155,Philadelphia (Pa.),"Overbrook (Philadelphia, Pa.)"
+1156,"Germantown (Philadelphia, Pa.)",Atlantic City (N.J.)
+1158,White Sulphur Springs (W. Va.),Philadelphia (Pa.)
+1160,Greenbrier County (W. Va.),"Germantown (Philadelphia, Pa.)"
+1161,Greenbrier County (W. Va.),Philadelphia (Pa.)
+1162,White Sulphur Springs (W. Va.),"Germantown (Philadelphia, Pa.)"
+1163,White Sulphur Springs (W. Va.),Philadelphia (Pa.)
+1164,Liberty (Va.),Philadelphia (Pa.)
+1165,Sweet Chalybeate Springs (Va.),Philadelphia (Pa.)
+1166,Sweet Chalybeate Springs (Va.),Philadelphia (Pa.)
+1167,Philadelphia (Pa.),Sweet Chalybeate Springs (Va.)
+1169,"Awbury (Philadelphia, Pa.)",Sweet Springs (W. Va.)
+1170,Sweet Springs (W. Va.),"Germantown (Philadelphia, Pa.)"
+1171,Philadelphia (Pa.),Philadelphia (Pa.)
+1174,"Overbrook (Philadelphia, Pa.)","Awbury (Philadelphia, Pa.)"
+1175,Washington (D.C.),Philadelphia (Pa.)
+1177,Liverpool (England),Philadelphia (Pa.)
+1179,Fountain Hill (Pa.),Philadelphia (Pa.)
+1181,Liverpool (England),Philadelphia (Pa.)
+1182,Liverpool (England),Philadelphia (Pa.)
+1183,"Awbury (Philadelphia, Pa.)",Liverpool (England)
+1188,"Awbury (Philadelphia, Pa.)",Philadelphia (Pa.)
+1189,Richfield (N.Y.),Liverpool (England)
+1193,Windermere (England),Philadelphia (Pa.)
+1195,Edinburgh (Scotland),Philadelphia (Pa.)
+1209,Menton (France),Philadelphia (Pa.)
+1210,"Germantown (Philadelphia, Pa.)",Menton (France)
+1216,"Germantown (Philadelphia, Pa.)",Menton (France)
+1227,Hudson (N.Y.),"Germantown (Philadelphia, Pa.)"
+1228,"Overbrook (Philadelphia, Pa.)",Rome (Italy)
+1254,"Awbury (Philadelphia, Pa.)",Newport (R.I.)
+1260,"Germantown (Philadelphia, Pa.)",Newport (R.I.)
+1261,"Awbury (Philadelphia, Pa.)",Newport (R.I.)
+1269,Ashbourne (England),London (England)
+1272,"Awbury (Philadelphia, Pa.)",Newport (R.I.)
+1274,"Woodbourne (Susquehanna County, Pa.)","Overbrook (Philadelphia, Pa.)"
+1276,"Germantown (Philadelphia, Pa.)","Awbury (Philadelphia, Pa.)"
+1279,Washington (D.C.),Philadelphia (Pa.)
+1284,Catskill (N.Y.),England
+1285,Catskill (N.Y.),England
+1290,Catskill (N.Y.),England
+1295,"Montrose (Susquehanna County, Pa.)","Germantown (Philadelphia, Pa.)"
+1296,"Montrose (Susquehanna County, Pa.)",Philadelphia (Pa.)
+1312,Florence (Italy),Philadelphia (Pa.)
+1316,Liverpool (England),Philadelphia (Pa.)
+1318,Florence (Italy),Philadelphia (Pa.)
+1321,Ashbourne (England),Florence (Italy)
+1323,Newport (R.I.),"Overbrook (Philadelphia, Pa.)"
+1326,Zurich (Switzerland),"Awbury (Philadelphia, Pa.)"
+1339,Washington (D.C.),Philadelphia (Pa.)
+1342,Philadelphia (Pa.),"Germantown (Philadelphia, Pa.)"
+1351,Washington (D.C.),Philadelphia (Pa.)
+1352,Washington (D.C.),Philadelphia (Pa.)
+1360,Bar Harbor (Me.),Philadelphia (Pa.)
+1363,Philadelphia (Pa.),Newport (R.I.)
+1366,"Montrose (Susquehanna County, Pa.)",Newport (R.I.)
+1369,Philadelphia (Pa.),Newport (R.I.)
+1374,Philadelphia (Pa.),Newport (R.I.)
+1381,"Awbury (Philadelphia, Pa.)",Tannersville (N.Y.)
+1389,Cannes (France),"Germantown (Philadelphia, Pa.)"
+1391,Rome (Italy),Philadelphia (Pa.)
+1392,"Awbury (Philadelphia, Pa.)",Atlantic City (N.J.)
+1393,"Germantown (Philadelphia, Pa.)",Atlantic City (N.J.)
+1395,"Awbury (Philadelphia, Pa.)","Montrose (Susquehanna County, Pa.)"
+1402,Geneva (Switzerland),"Montrose (Susquehanna County, Pa.)"
+1448,Richfield (N.Y.),Newport (R.I.)
+1460,Newport (R.I.),Philadelphia (Pa.)
+1461,"Montrose (Susquehanna County, Pa.)",Newport (R.I.)
+1474,"Awbury (Philadelphia, Pa.)","Montrose (Susquehanna County, Pa.)"
+1478,Newport (R.I.),"Awbury (Philadelphia, Pa.)"
+1480,Newport (R.I.),"Awbury (Philadelphia, Pa.)"
+1481,Newport (R.I.),"Awbury (Philadelphia, Pa.)"
+1482,Newport (R.I.),"Awbury (Philadelphia, Pa.)"
+1483,Newport (R.I.),Maryland
+1484,Newport (R.I.),Maryland
+1486,"Awbury (Philadelphia, Pa.)",Newport (R.I.)
+1496,Newport (R.I.),"Awbury (Philadelphia, Pa.)"
+1497,Newport (R.I.),"Awbury (Philadelphia, Pa.)"
+1498,Newport (R.I.),"Awbury (Philadelphia, Pa.)"
+1501,Newport (R.I.),"Awbury (Philadelphia, Pa.)"
+1502,"Awbury (Philadelphia, Pa.)",Newport (R.I.)
+1503,Newport (R.I.),"Awbury (Philadelphia, Pa.)"
+1505,Newport (R.I.),"Awbury (Philadelphia, Pa.)"
+1508,Newport (R.I.),"Awbury (Philadelphia, Pa.)"
+1509,Newport (R.I.),"Awbury (Philadelphia, Pa.)"
+1510,Newport (R.I.),"Awbury (Philadelphia, Pa.)"
+1511,Newport (R.I.),"Awbury (Philadelphia, Pa.)"
+1512,Newport (R.I.),"Awbury (Philadelphia, Pa.)"
+1513,Newport (R.I.),"Awbury (Philadelphia, Pa.)"
+1514,Newport (R.I.),"Awbury (Philadelphia, Pa.)"
+1516,"Awbury (Philadelphia, Pa.)",Newport (R.I.)
+1517,Newport (R.I.),"Awbury (Philadelphia, Pa.)"
+1518,Newport (R.I.),"Awbury (Philadelphia, Pa.)"
+1519,Newport (R.I.),"Awbury (Philadelphia, Pa.)"
+1520,Newport (R.I.),"Awbury (Philadelphia, Pa.)"
+1521,Newport (R.I.),"Awbury (Philadelphia, Pa.)"
+1522,Newport (R.I.),"Awbury (Philadelphia, Pa.)"
+1523,Philadelphia (Pa.),Newport (R.I.)
+1524,Philadelphia (Pa.),Newport (R.I.)
+1525,Philadelphia (Pa.),Newport (R.I.)
+1526,Philadelphia (Pa.),Newport (R.I.)
+1527,"Awbury (Philadelphia, Pa.)",Newport (R.I.)
+1528,Philadelphia (Pa.),Newport (R.I.)
+1529,Philadelphia (Pa.),Newport (R.I.)
+1530,Philadelphia (Pa.),Newport (R.I.)
+1531,Philadelphia (Pa.),Newport (R.I.)
+1532,Philadelphia (Pa.),Newport (R.I.)
+1533,Philadelphia (Pa.),Newport (R.I.)
+1534,"Awbury (Philadelphia, Pa.)",Newport (R.I.)
+1535,"Awbury (Philadelphia, Pa.)",Newport (R.I.)
+1537,Philadelphia (Pa.),Newport (R.I.)
+1538,Philadelphia (Pa.),Newport (R.I.)
+1541,Philadelphia (Pa.),Newport (R.I.)
+1542,Philadelphia (Pa.),Newport (R.I.)
+1543,Philadelphia (Pa.),Newport (R.I.)
+1544,"Awbury (Philadelphia, Pa.)",Newport (R.I.)
+1545,Philadelphia (Pa.),Newport (R.I.)
+1546,Philadelphia (Pa.),Newport (R.I.)
+1547,Philadelphia (Pa.),Newport (R.I.)
+1548,Philadelphia (Pa.),Newport (R.I.)
+1550,Philadelphia (Pa.),Newport (R.I.)
+1551,Philadelphia (Pa.),Newport (R.I.)
+1552,Philadelphia (Pa.),Newport (R.I.)
+1553,"Woodbourne (Susquehanna County, Pa.)",Newport (R.I.)
+1554,Philadelphia (Pa.),Newport (R.I.)
+1555,Philadelphia (Pa.),Newport (R.I.)
+1556,Philadelphia (Pa.),Newport (R.I.)
+1557,Philadelphia (Pa.),Newport (R.I.)
+1558,Philadelphia (Pa.),Newport (R.I.)
+1560,Philadelphia (Pa.),Newport (R.I.)
+1561,Philadelphia (Pa.),Newport (R.I.)
+1563,Philadelphia (Pa.),Newport (R.I.)
+1565,Philadelphia (Pa.),Newport (R.I.)
+1566,Philadelphia (Pa.),Newport (R.I.)
+1568,Newport (R.I.),"Awbury (Philadelphia, Pa.)"
+1570,"Awbury (Philadelphia, Pa.)",Newport (R.I.)
+1571,Philadelphia (Pa.),Newport (R.I.)
+1573,Philadelphia (Pa.),Newport (R.I.)
+1574,"Awbury (Philadelphia, Pa.)",Newport (R.I.)
+1575,"Awbury (Philadelphia, Pa.)",Newport (R.I.)
+1578,Philadelphia (Pa.),Newport (R.I.)
+1579,Philadelphia (Pa.),Newport (R.I.)
+1580,Philadelphia (Pa.),Newport (R.I.)
+1583,Philadelphia (Pa.),Newport (R.I.)
+1587,Philadelphia (Pa.),Newport (R.I.)
+1589,Newport (R.I.),"Germantown (Philadelphia, Pa.)"
+1591,Philadelphia (Pa.),Newport (R.I.)
+1596,Philadelphia (Pa.),Newport (R.I.)
+1597,Newport (R.I.),"Awbury (Philadelphia, Pa.)"
+1598,Philadelphia (Pa.),Newport (R.I.)
+1600,Philadelphia (Pa.),Newport (R.I.)
+1616,Philadelphia (Pa.),"Awbury (Philadelphia, Pa.)"
+1619,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+1628,Philadelphia (Pa.),"Woodbourne (Susquehanna County, Pa.)"
+1629,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+1630,Philadelphia (Pa.),"Woodbourne (Susquehanna County, Pa.)"
+1632,"Awbury (Philadelphia, Pa.)","Woodbourne (Susquehanna County, Pa.)"
+1633,"Awbury (Philadelphia, Pa.)","Woodbourne (Susquehanna County, Pa.)"
+1636,"Awbury (Philadelphia, Pa.)",Dimock (Pa. : Township)
+1637,Darlington (Md.),Dimock (Pa. : Township)
+1643,"Awbury (Philadelphia, Pa.)","Magnolia (Gloucester, Mass.)"
+1651,"Awbury (Philadelphia, Pa.)","Woodbourne (Susquehanna County, Pa.)"
+1658,Philadelphia (Pa.),"Woodbourne (Susquehanna County, Pa.)"
+1661,Philadelphia (Pa.),"Woodbourne (Susquehanna County, Pa.)"
+1666,Philadelphia (Pa.),"Woodbourne (Susquehanna County, Pa.)"
+1669,Southport (England),"Awbury (Philadelphia, Pa.)"
+1672,Dimock (Pa. : Township),"Awbury (Philadelphia, Pa.)"
+1679,"Woodbourne (Susquehanna County, Pa.)","Awbury (Philadelphia, Pa.)"
+1689,"Awbury (Philadelphia, Pa.)","Woodbourne (Susquehanna County, Pa.)"
+1700,Conowingo Reservoir (Md. and Pa.),Philadelphia (Pa.)
+1718,"Awbury (Philadelphia, Pa.)",Hampton (Va.)
+1730,Newport (R.I.),"Woodbourne (Susquehanna County, Pa.)"
+1756,Philadelphia (Pa.),"Woodbourne (Susquehanna County, Pa.)"
+1763,"Awbury (Philadelphia, Pa.)","Woodbourne (Susquehanna County, Pa.)"
+1768,"Awbury (Philadelphia, Pa.)","Woodbourne (Susquehanna County, Pa.)"
+1773,Philadelphia (Pa.),Philadelphia (Pa.)
+1778,"Awbury (Philadelphia, Pa.)","Woodbourne (Susquehanna County, Pa.)"
+1786,Philadelphia (Pa.),"Woodbourne (Susquehanna County, Pa.)"
+1790,Philadelphia (Pa.),Newport (R.I.)
+1810,Newport (R.I.),"Awbury (Philadelphia, Pa.)"
+1820,"Awbury (Philadelphia, Pa.)",Newport (R.I.)
+1822,Philadelphia (Pa.),"Woodbourne (Susquehanna County, Pa.)"
+1824,Philadelphia (Pa.),"Woodbourne (Susquehanna County, Pa.)"
+1840,Conowingo Reservoir (Md. and Pa.),"Awbury (Philadelphia, Pa.)"
+1850,Newport (R.I.),"Woodbourne (Susquehanna County, Pa.)"
+1856,"Awbury (Philadelphia, Pa.)",Newport (R.I.)
+1859,Philadelphia (Pa.),"Woodbourne (Susquehanna County, Pa.)"
+1868,Philadelphia (Pa.),"Woodbourne (Susquehanna County, Pa.)"
+1869,Newport (R.I.),"Awbury (Philadelphia, Pa.)"
+1877,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+1900,Philadelphia (Pa.),"Woodbourne (Susquehanna County, Pa.)"
+1901,Philadelphia (Pa.),"Woodbourne (Susquehanna County, Pa.)"
+1903,"Woodbourne (Susquehanna County, Pa.)",Newport (R.I.)
+1909,"Awbury (Philadelphia, Pa.)","Woodbourne (Susquehanna County, Pa.)"
+1917,"Woodbourne (Susquehanna County, Pa.)",Newport (R.I.)
+1927,Hampton (Va.),"Germantown (Philadelphia, Pa.)"
+1929,Washington (D.C.),Philadelphia (Pa.)
+1930,Asheville (N.C.),"Germantown (Philadelphia, Pa.)"
+1931,Washington (D.C.),Philadelphia (Pa.)
+1932,Charleston (S.C.),"Germantown (Philadelphia, Pa.)"
+1934,Saint Augustine (Fla.),"Germantown (Philadelphia, Pa.)"
+1935,Saint Augustine (Fla.),"Germantown (Philadelphia, Pa.)"
+1940,Philadelphia (Pa.),Philadelphia (Pa.)
+1941,"Awbury (Philadelphia, Pa.)",Newport (R.I.)
+1949,Philadelphia (Pa.),Philadelphia (Pa.)
+1954,Saint Augustine (Fla.),Dimock (Pa. : Township)
+1983,Philadelphia (Pa.),"Woodbourne (Susquehanna County, Pa.)"
+1984,"Awbury (Philadelphia, Pa.)",Newport (R.I.)
+1987,"Awbury (Philadelphia, Pa.)",Newport (R.I.)
+1988,"Woodbourne (Susquehanna County, Pa.)",Philadelphia (Pa.)
+1990,"Awbury (Philadelphia, Pa.)","Woodbourne (Susquehanna County, Pa.)"
+1994,"Woodbourne (Susquehanna County, Pa.)",Conanicut Island (R.I.)
+2004,"Awbury (Philadelphia, Pa.)",Conanicut Island (R.I.)
+2011,"Awbury (Philadelphia, Pa.)",Conanicut Island (R.I.)
+2023,"Woodbourne (Susquehanna County, Pa.)",Jamestown (R.I.)
+2026,Venice (Italy),"Woodbourne (Susquehanna County, Pa.)"
+2030,Liverpool (England),"Germantown (Philadelphia, Pa.)"
+2032,Wilmington (Del.),Philadelphia (Pa.)
+2033,Wilmington (Del.),Philadelphia (Pa.)
+2034,Wilmington (Del.),Philadelphia (Pa.)
+2035,Wilmington (Del.),Philadelphia (Pa.)
+2037,Wilmington (Del.),Philadelphia (Pa.)
+2038,Philadelphia (Pa.),Philadelphia (Pa.)
+2041,Wilmington (Del.),Philadelphia (Pa.)
+2042,"Awbury (Philadelphia, Pa.)",Spring Lake (N.J.)
+2043,Wilmington (Del.),Philadelphia (Pa.)
+2044,Philadelphia (Pa.),Spring Lake (N.J.)
+2045,Wilmington (Del.),Philadelphia (Pa.)
+2049,Wilmington (Del.),Philadelphia (Pa.)
+2050,Wilmington (Del.),Philadelphia (Pa.)
+2052,Darlington (Md.),Newport (R.I.)
+2056,Wilmington (Del.),Philadelphia (Pa.)
+2062,Henderson Harbor (N.Y.),Dimock (Pa. : Township)
+2068,Watertown (N.Y.),Philadelphia (Pa.)
+2069,Alexandria Bay (N.Y.),Philadelphia (Pa.)
+2081,Wilmington (Del.),Philadelphia (Pa.)
+2085,Newport (R.I.),"Germantown (Philadelphia, Pa.)"
+2087,Wilmington (Del.),Philadelphia (Pa.)
+2091,Jamestown (R.I.),"Woodbourne (Susquehanna County, Pa.)"
+2092,Jamestown (R.I.),"Germantown (Philadelphia, Pa.)"
+2094,"Awbury (Philadelphia, Pa.)",Conanicut Island (R.I.)
+2095,"Awbury (Philadelphia, Pa.)",Conanicut Island (R.I.)
+2103,"Awbury (Philadelphia, Pa.)",Conanicut Island (R.I.)
+2104,"Awbury (Philadelphia, Pa.)",Conanicut Island (R.I.)
+2105,"Awbury (Philadelphia, Pa.)",Conanicut Island (R.I.)
+2106,"Awbury (Philadelphia, Pa.)",Conanicut Island (R.I.)
+2107,"Awbury (Philadelphia, Pa.)",Conanicut Island (R.I.)
+2110,"Awbury (Philadelphia, Pa.)","Woodbourne (Susquehanna County, Pa.)"
+2114,"Awbury (Philadelphia, Pa.)","Woodbourne (Susquehanna County, Pa.)"
+2143,Wilmington (Del.),Philadelphia (Pa.)
+2146,Wilmington (Del.),Philadelphia (Pa.)
+2152,Wilmington (Del.),Philadelphia (Pa.)
+2155,"Woodbourne (Susquehanna County, Pa.)",Conanicut Island (R.I.)
+2157,"Woodbourne (Susquehanna County, Pa.)",Conanicut Island (R.I.)
+2166,Philadelphia (Pa.),Conanicut Island (R.I.)
+2168,Paris (France),Dimock (Pa. : Township)
+2172,Ashbourne (England),"Awbury (Philadelphia, Pa.)"
+2173,Wilmington (Del.),Philadelphia (Pa.)
+2177,Clifford (Pa. : Township),Dimock (Pa. : Township)
+2178,Hawley (Pa.),Dimock (Pa. : Township)
+2181,Lackawaxen (Pa.),Dimock (Pa. : Township)
+2182,Lackawaxen (Pa.),Dimock (Pa. : Township)
+2183,Hawley (Pa.),Dimock (Pa. : Township)
+2184,Wilmington (Del.),Philadelphia (Pa.)
+2198,Graubünden (Switzerland),Philadelphia (Pa.)
+2226,Wilmington (Del.),Philadelphia (Pa.)
+2233,Wilmington (Del.),Philadelphia (Pa.)
+2243,"Awbury (Philadelphia, Pa.)",Conanicut Island (R.I.)
+2249,Philadelphia (Pa.),"Montrose (Susquehanna County, Pa.)"
+2250,Philadelphia (Pa.),Dimock (Pa. : Township)
+2259,Wilmington (Del.),Philadelphia (Pa.)
+2267,Wilmington (Del.),Philadelphia (Pa.)
+2281,Wilmington (Del.),Philadelphia (Pa.)
+2300,Saranac Lake (N.Y.),"Awbury (Philadelphia, Pa.)"
+2307,Wilmington (Del.),Philadelphia (Pa.)
+2313,Wilmington (Del.),Philadelphia (Pa.)
+2318,"Woodbourne (Susquehanna County, Pa.)",York Harbor (Me.)
+2326,Ulster County (N.Y.),York Harbor (Me.)
+2334,"Awbury (Philadelphia, Pa.)",Jamestown (R.I.)
+2338,Wilmington (Del.),Philadelphia (Pa.)
+2350,Wilmington (Del.),Philadelphia (Pa.)
+2351,Wilmington (Del.),Philadelphia (Pa.)
+2353,Wilmington (Del.),Philadelphia (Pa.)
+2354,Wilmington (Del.),Philadelphia (Pa.)
+2355,Wilmington (Del.),Philadelphia (Pa.)
+2356,Wilmington (Del.),Philadelphia (Pa.)
+2357,Wilmington (Del.),Philadelphia (Pa.)
+2358,Wilmington (Del.),Philadelphia (Pa.)
+2359,Wilmington (Del.),Philadelphia (Pa.)
+2360,Wilmington (Del.),Philadelphia (Pa.)
+2361,Wilmington (Del.),Philadelphia (Pa.)
+2362,Wilmington (Del.),Philadelphia (Pa.)
+2366,Wilmington (Del.),Philadelphia (Pa.)
+2367,Wilmington (Del.),Philadelphia (Pa.)
+2368,Wilmington (Del.),Philadelphia (Pa.)
+2369,Wilmington (Del.),Philadelphia (Pa.)
+2370,Wilmington (Del.),Philadelphia (Pa.)
+2373,Wilmington (Del.),Philadelphia (Pa.)
+2374,"Awbury (Philadelphia, Pa.)",Conanicut Island (R.I.)
+2378,"Woodbourne (Susquehanna County, Pa.)",Sharon (Conn.)
+2382,Wilmington (Del.),Philadelphia (Pa.)
+2383,Wilmington (Del.),Philadelphia (Pa.)
+2390,Cape May (N.J.),"Awbury (Philadelphia, Pa.)"
+2391,Cape May (N.J.),"Awbury (Philadelphia, Pa.)"
+2400,Wilmington (Del.),Philadelphia (Pa.)
+2402,Wilmington (Del.),Philadelphia (Pa.)
+2403,Wilmington (Del.),Philadelphia (Pa.)
+2412,"Awbury (Philadelphia, Pa.)",Dimock (Pa. : Township)
+2414,Jamestown (R.I.),Dimock (Pa. : Township)
+2417,Ulster County (N.Y.),Holderness (N.H. : Town)
+2420,Wilmington (Del.),Philadelphia (Pa.)
+2422,Wilmington (Del.),Philadelphia (Pa.)
+2423,"Awbury (Philadelphia, Pa.)",Jamestown (R.I.)
+2426,"Germantown (Philadelphia, Pa.)","Woodbourne (Susquehanna County, Pa.)"
+2434,"Germantown (Philadelphia, Pa.)","Woodbourne (Susquehanna County, Pa.)"
+2437,Wilmington (Del.),Philadelphia (Pa.)
+2438,Wilmington (Del.),Philadelphia (Pa.)
+2439,Wilmington (Del.),Philadelphia (Pa.)
+2440,Wilmington (Del.),Philadelphia (Pa.)
+2442,Wilmington (Del.),Philadelphia (Pa.)
+2443,Philadelphia (Pa.),Philadelphia (Pa.)
+2449,Cape May (N.J.),"Awbury (Philadelphia, Pa.)"
+2453,Wilmington (Del.),Philadelphia (Pa.)
+2456,Wilmington (Del.),Philadelphia (Pa.)
+2457,Wilmington (Del.),Philadelphia (Pa.)
+2459,Conanicut Island (R.I.),Ulster County (N.Y.)
+2467,Wilmington (Del.),Philadelphia (Pa.)
+2474,"Awbury (Philadelphia, Pa.)",England
+2475,"Awbury (Philadelphia, Pa.)",Dimock (Pa. : Township)
+2477,Wilmington (Del.),Philadelphia (Pa.)
+2489,Boston (Mass.),"Germantown (Philadelphia, Pa.)"
+2490,Wilmington (Del.),Philadelphia (Pa.)
+2491,Wilmington (Del.),"Awbury (Philadelphia, Pa.)"
+2492,Boston (Mass.),"Germantown (Philadelphia, Pa.)"
+2494,Boston (Mass.),"Germantown (Philadelphia, Pa.)"
+2495,Boston (Mass.),"Germantown (Philadelphia, Pa.)"
+2496,Wilmington (Del.),"Awbury (Philadelphia, Pa.)"
+2497,Boston (Mass.),"Germantown (Philadelphia, Pa.)"
+2499,Boston (Mass.),"Germantown (Philadelphia, Pa.)"
+2503,Boston (Mass.),"Germantown (Philadelphia, Pa.)"
+2504,Boston (Mass.),"Germantown (Philadelphia, Pa.)"
+2512,Boston (Mass.),"Germantown (Philadelphia, Pa.)"
+2513,Boston (Mass.),Philadelphia (Pa.)
+2516,Wilmington (Del.),"Awbury (Philadelphia, Pa.)"
+2517,Wilmington (Del.),Philadelphia (Pa.)
+2518,Wilmington (Del.),"Awbury (Philadelphia, Pa.)"
+2519,Wilmington (Del.),"Awbury (Philadelphia, Pa.)"
+2535,Hague (Netherlands),"Church Stretton, Shropshire (England)"
+2540,Cambridge (Mass.),"Germantown (Philadelphia, Pa.)"
+2541,Wilmington (Del.),"Awbury (Philadelphia, Pa.)"
+2543,Wilmington (Del.),"Awbury (Philadelphia, Pa.)"
+2554,"Germantown (Philadelphia, Pa.)",Darlington (Md.)
+2558,Dimock (Pa. : Township),Wilmington (Del.)
+2561,Wilmington (Del.),"Awbury (Philadelphia, Pa.)"
+2566,Wilmington (Del.),"Awbury (Philadelphia, Pa.)"
+2577,Wilmington (Del.),"Awbury (Philadelphia, Pa.)"
+2580,Wilmington (Del.),"Awbury (Philadelphia, Pa.)"
+2589,Wilmington (Del.),"Awbury (Philadelphia, Pa.)"
+2593,Philadelphia (Pa.),"Awbury (Philadelphia, Pa.)"
+2594,Philadelphia (Pa.),"Awbury (Philadelphia, Pa.)"
+2595,Wilmington (Del.),"Germantown (Philadelphia, Pa.)"
+2597,Wilmington (Del.),"Awbury (Philadelphia, Pa.)"
+2600,Wilmington (Del.),"Awbury (Philadelphia, Pa.)"
+2601,Wilmington (Del.),"Awbury (Philadelphia, Pa.)"
+2602,Wilmington (Del.),"Awbury (Philadelphia, Pa.)"
+2603,Philadelphia (Pa.),"Germantown (Philadelphia, Pa.)"
+2607,"Awbury (Philadelphia, Pa.)","Awbury (Philadelphia, Pa.)"
+2609,Wilmington (Del.),"Germantown (Philadelphia, Pa.)"
+2611,"Awbury (Philadelphia, Pa.)","Woodbourne (Susquehanna County, Pa.)"
+2612,"Awbury (Philadelphia, Pa.)","Woodbourne (Susquehanna County, Pa.)"
+2613,Wilmington (Del.),"Awbury (Philadelphia, Pa.)"
+2614,Philadelphia (Pa.),"Awbury (Philadelphia, Pa.)"
+2615,Philadelphia (Pa.),"Awbury (Philadelphia, Pa.)"
+2617,Wilmington (Del.),"Awbury (Philadelphia, Pa.)"
+2619,"Awbury (Philadelphia, Pa.)","Woodbourne (Susquehanna County, Pa.)"
+2620,Philadelphia (Pa.),"Germantown (Philadelphia, Pa.)"
+2622,"Woodbourne (Susquehanna County, Pa.)",Cheshire (Mass.)
+2624,Wilmington (Del.),"Awbury (Philadelphia, Pa.)"
+2626,Philadelphia (Pa.),"Awbury (Philadelphia, Pa.)"
+2627,Philadelphia (Pa.),"Awbury (Philadelphia, Pa.)"
+2628,Philadelphia (Pa.),"Awbury (Philadelphia, Pa.)"
+2629,Wilmington (Del.),"Awbury (Philadelphia, Pa.)"
+2633,Wilmington (Del.),"Awbury (Philadelphia, Pa.)"
+2636,Wilmington (Del.),"Awbury (Philadelphia, Pa.)"
+2639,Philadelphia (Pa.),"Awbury (Philadelphia, Pa.)"
+2640,Philadelphia (Pa.),"Germantown (Philadelphia, Pa.)"
+2641,Philadelphia (Pa.),"Awbury (Philadelphia, Pa.)"
+2642,Philadelphia (Pa.),"Germantown (Philadelphia, Pa.)"
+2643,Philadelphia (Pa.),"Germantown (Philadelphia, Pa.)"
+2646,"Awbury (Philadelphia, Pa.)","Awbury (Philadelphia, Pa.)"
+2648,"Germantown (Philadelphia, Pa.)",Darlington (Md.)
+2649,Aberfoyle (Scotland),"Germantown (Philadelphia, Pa.)"
+2651,Wilmington (Del.),"Awbury (Philadelphia, Pa.)"
+2654,Wilmington (Del.),Northeast Harbor (Me.)
+2655,Northeast Harbor (Me.),Philadelphia (Pa.)
+2659,Wilmington (Del.),Northeast Harbor (Me.)
+2660,Wilmington (Del.),Philadelphia (Pa.)
+2662,Philadelphia (Pa.),Northeast Harbor (Me.)
+2666,Philadelphia (Pa.),Northeast Harbor (Me.)
+2669,Wilmington (Del.),Northeast Harbor (Me.)
+2672,Northeast Harbor (Me.),Philadelphia (Pa.)
+2678,Wilmington (Del.),Northeast Harbor (Me.)
+2681,Conanicut Island (R.I.),Franconia (N.H.)
+2684,Philadelphia (Pa.),Northeast Harbor (Me.)
+2686,Wilmington (Del.),"Germantown (Philadelphia, Pa.)"
+2691,Wilmington (Del.),"Awbury (Philadelphia, Pa.)"
+2695,Wilmington (Del.),"Germantown (Philadelphia, Pa.)"
+2697,Wilmington (Del.),"Awbury (Philadelphia, Pa.)"
+2698,Moorestown (N.J.),"Germantown (Philadelphia, Pa.)"
+2699,Philadelphia (Pa.),"Awbury (Philadelphia, Pa.)"
+2700,Philadelphia (Pa.),"Awbury (Philadelphia, Pa.)"
+2701,Philadelphia (Pa.),"Awbury (Philadelphia, Pa.)"
+2703,"Awbury (Philadelphia, Pa.)","Woodbourne (Susquehanna County, Pa.)"
+2704,Baltimore (Md.),New Orleans (La.)
+2709,New York (N.Y.),Jamestown (R.I.)
+2719,Franconia (N.H.),Dimock (Pa. : Township)
+2720,Philadelphia (Pa.),Jamestown (R.I.)
+2734,Hampton (Va.),"Germantown (Philadelphia, Pa.)"
+2776,Philadelphia (Pa.),"Awbury (Philadelphia, Pa.)"
+2777,Philadelphia (Pa.),"Awbury (Philadelphia, Pa.)"
+2780,Philadelphia (Pa.),"Awbury (Philadelphia, Pa.)"
+2783,New Orleans (La.),Rome (Italy)
+2791,New Orleans (La.),Rome (Italy)
+2797,Asticou (Me.),"Awbury (Philadelphia, Pa.)"
+2831,Ann Arbor (Mich.),Rome (Italy)
+2841,Lynton (England),Philadelphia (Pa.)
+2848,Asticou (Me.),Dimock (Pa. : Township)
+2849,Chester (England),Philadelphia (Pa.)
+2852,Asticou (Me.),Dimock (Pa. : Township)
+2870,Asticou (Me.),"Woodbourne (Susquehanna County, Pa.)"
+2873,Hampton (Va.),"Germantown (Philadelphia, Pa.)"
+2874,West Chester (Pa.),"Germantown (Philadelphia, Pa.)"
+2899,West Chester (Pa.),"Germantown (Philadelphia, Pa.)"
+2913,Northeast Harbor (Me.),Conanicut Island (R.I.)
+2914,Northeast Harbor (Me.),Conanicut Island (R.I.)
+2916,Northeast Harbor (Me.),Conanicut Island (R.I.)
+2919,Northeast Harbor (Me.),Conanicut Island (R.I.)
+2920,Northeast Harbor (Me.),Conanicut Island (R.I.)
+2972,"Awbury (Philadelphia, Pa.)",Ann Arbor (Mich.)
+2973,Little Falls (N.Y.),Philadelphia (Pa.)
+2984,Philadelphia (Pa.),"Germantown (Philadelphia, Pa.)"
+3021,"Awbury (Philadelphia, Pa.)",Northeast Harbor (Me.)
+3022,"Awbury (Philadelphia, Pa.)",Northeast Harbor (Me.)
+3023,New York (N.Y.),Northeast Harbor (Me.)
+3024,"Awbury (Philadelphia, Pa.)",Northeast Harbor (Me.)
+3025,"Woodbourne (Susquehanna County, Pa.)",Northeast Harbor (Me.)
+3027,"Awbury (Philadelphia, Pa.)",Northeast Harbor (Me.)
+3028,"Awbury (Philadelphia, Pa.)",Dimock (Pa. : Township)
+3031,"Awbury (Philadelphia, Pa.)",Dimock (Pa. : Township)
+3036,"Awbury (Philadelphia, Pa.)",Northeast Harbor (Me.)
+3040,"Awbury (Philadelphia, Pa.)",Philadelphia (Pa.)
+3041,"Germantown (Philadelphia, Pa.)","Awbury (Philadelphia, Pa.)"
+3042,Northeast Harbor (Me.),Philadelphia (Pa.)
+3043,Northeast Harbor (Me.),Philadelphia (Pa.)
+3045,New York (N.Y.),Ojai (Calif.)
+3047,Philadelphia (Pa.),Philadelphia (Pa.)
+3049,Basra (Iraq),"Awbury (Philadelphia, Pa.)"
+3052,Bern (Switzerland),"Germantown (Philadelphia, Pa.)"
+3053,Haverford (Pa. : Township),Dimock (Pa. : Township)
+3054,Hague (Netherlands),"Awbury (Philadelphia, Pa.)"
+3062,"Woodbourne (Susquehanna County, Pa.)",Coalbrookdale (England)

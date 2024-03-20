@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <style>
+        div.test {
+          height: 200px;
+          /* max-width: 100%; */
+          z-index: 0;
+        }
+    </style> 
+</head>
+<body>
+    <div id="map", class="test">
+    </div>
+    <input id="year_input" type="range" min="1800" max="1920" step="1" value="1800" style="width: 250px;">
+    <p style="text-align:left">Year: <output id="value"></output></p>
+    <script>
+        d3.csv('/csv/processed_sample_data.csv', function(err, rows) {
+            function unpack(rows, key) {
+                return rows.map(function(row) {return row[key];}); 
+            }
+            let origin = unpack(rows, 'Origin'),
+                title = unpack(rows, 'Title'),
+                author = unpack(rows, 'Author'),
+                recipient = unpack(rows, 'Recipient')
+                lat = unpack(rows, 'start_lat'),
+                long = unpack(rows, 'start_long'),
+                year = unpack(rows, 'Year'),
+                month = unpack(rows, 'Month'),
+                day = unpack(rows, 'Day'),
+                color = unpack(rows, 'Color'),
+                season = unpack(rows, 'Season')
+                    
+
+            let winterGroup = [],
+                springGroup = [],
+                summerGroup = [],
+                fallGroup = []
+
+            for (var i = 0; i < title.length; i++) { //add circular markers w/ popups for each location
+                //colors = color[i]
+                circle = L.circleMarker([lat[i], long[i]], { 
+                    color: color[i],
+                    fillColor: color[i],
+                    //fillOpacity: 0.5,
+                    radius: 2,
+                    //alt: places[i] + ": " + total[i] + " patients",
+                })
+                //.addTo(map)
+                .bindPopup(title[i] +  '<br /> By: ' + author[i] + '<br /> To: ' + recipient[i])
+                if (season[i] == 'Winter') {
+                    winterGroup.push(circle)
+                }
+                if (season[i] == 'Spring') {
+                    springGroup.push(circle)
+                }
+                if (season[i] == 'Summer') {
+                    summerGroup.push(circle)
+                }
+                if (season[i] == 'Fall') {
+                    fallGroup.push(circle)
+                }
+            }
+
+            let winter = L.layerGroup(winterGroup),
+                spring = L.layerGroup(springGroup),
+                summer = L.layerGroup(summerGroup),
+                fall = L.layerGroup(fallGroup)
+
+            let overlayMaps = {
+                "Winter": winter,
+                "Spring": spring,
+                "Summer": summer,
+                "Fall": fall
+            };
+
+            let map = L 
+                .map("map", {
+                    maxBounds: [[-90, -260],[90, 260]],
+                    maxBoundsViscosity: 1,  
+                    layers: [winter, spring, summer, fall]
+                })
+                .setView([39.9526,-75.1652], 2); 
+
+            L.tileLayer(
+                'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>',
+                //maxZoom: 10,
+                }).addTo(map);
+
+            let layerControl = L.control.layers(null, overlayMaps).addTo(map); //add the overlays to the map. first value represents base layers. Since there is only one base layer, there is no need to add controls for it
+            
+            
+        })
+    </script>
+    
+</body>
+</html>

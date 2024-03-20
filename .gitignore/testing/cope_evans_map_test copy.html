@@ -1,64 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- TODO: Descriptive text for visualizations -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mapping the Collection</title>
-    <!-- D3 -->
+    <title>Document</title>
     <script src="https://d3js.org/d3.v4.js"></script>
     <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
-    <!-- Leaflet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-    <!-- Lato from Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="../css/style.css">
 
-
+    <style>
+        div.test {
+          height: 200px;
+          /* max-width: 100%; */
+          z-index: 0;
+        }
+    </style> 
 </head>
 <body>
-    <h1>Mapping the Collection</h1>
-    <p>The following map shows the origins of letters in the collection, where the season a letter was sent is denoted by the color of its marker. Below the map are filters for year, author, and season.</p>
-    <p>On Filters: Moving the slider for year will only change the map if the year box is checked. Similarly, entering an author's name will only change the map if the author box is checked.</p>
-    <div>
-        <div id="map", class="map">
-        </div>
-        <input id="year_input" class="year_input" type="range" min="1820" max="1920" step="1" value="1820">
-        <p style="text-align:left">Year: <output id="value"></output></p>
-        <input id= "author_input" class="author_input" type= "text" placeholder= "Last name, first name", list = 'author_list'>
-        <datalist id = "author_list"></datalist>
-        <fieldset>
-            <legend>Filters:</legend>
-            <div>
-                <input type="checkbox" name="all" id="all" checked>
-                <label for="all">All</label>
-                <input type="checkbox" name="year" id="year">
-                <label for="year">Year</label>
-                <input type="checkbox" name="author" id="author">
-                <label for="author">Author</label>
-            </div>
-        </fieldset>
-
-        <fieldset>
-            <legend>Season:</legend>
-            <div>
-                <input type="checkbox" name="winter" id="winter" checked>
-                <label for="winter">Winter</label>
-                <input type="checkbox" name="spring" id="spring" checked>
-                <label for="spring">Spring</label>
-                <input type="checkbox" name="summer" id="summer" checked>
-                <label for="summer">Summer</label>
-                <input type="checkbox" name="fall" id="fall" checked>
-                <label for="fall">Fall</label>
-            </div>
-        </fieldset>
+    <div id="map", class="test">
     </div>
+    <input id="year_input" type="range" min="1820" max="1920" step="1" value="1820" style="width: 250px;">
+    <p style="text-align:left">Year: <output id="value"></output></p>
+    <input id= "author_input" type= "text" placeholder= "Last name, first name", list = 'author_list' style="width: 600px;">
+    <datalist id = "author_list"></datalist>
+    <fieldset>
+        <legend>Filters:</legend>
+        <div>
+            <input type="checkbox" name="all" id="all" checked>
+            <label for="all">All</label>
+            <input type="checkbox" name="year" id="year">
+            <label for="year">Year</label>
+            <input type="checkbox" name="author" id="author">
+            <label for="author">Author</label>
+        </div>
+    </fieldset>
 
+    <fieldset>
+        <legend>Season:</legend>
+        <div>
+            <input type="checkbox" name="winter" id="winter" checked>
+            <label for="winter">Winter</label>
+            <input type="checkbox" name="spring" id="spring" checked>
+            <label for="spring">Spring</label>
+            <input type="checkbox" name="summer" id="summer" checked>
+            <label for="summer">Summer</label>
+            <input type="checkbox" name="fall" id="fall" checked>
+            <label for="fall">Fall</label>
+        </div>
+    </fieldset>
+    
     <script>
-        d3.csv('/csv/processed_data_map.csv', function(err, rows) { //parse data with d3
+        d3.csv('/csv/processed_sample_data.csv', function(err, rows) {
             function unpack(rows, key) {
                 return rows.map(function(row) {return row[key];}); 
             }
@@ -74,7 +68,7 @@
                 color = unpack(rows, 'Color'),
                 seasons = unpack(rows, 'Season');
               
-            let uniqueAuthor = []; 
+            let uniqueAuthor = [];
             for (let i = 0; i < authors.length; i++) {
                 if (!uniqueAuthor.includes(authors[i])) {
                     uniqueAuthor.push(authors[i])
@@ -87,7 +81,7 @@
                 list.appendChild(option);
             })
                 
-            let uniqueYears = Array.from({ length: 101 }, (value, index) => index + 1820); //Create array [1820, 1821, ... , 1920]
+            let uniqueYears = Array.from({ length: 101 }, (value, index) => index + 1820);
 
             let data = [];
 
@@ -111,7 +105,7 @@
                     fillColor: color[i],
                     radius: 2,
                 })
-                .bindPopup(title[i] +  '<br />' + authors[i] + '<br />' + recipient[i] + '<br /> Season: ' + seasons[i] + '<br /> Year: ' + years[i] + '<br /> Origin: ' + origin[i])
+                .bindPopup(title[i] +  '<br /> By: ' + authors[i] + '<br /> To: ' + recipient[i] + '<br /> Season: ' + seasons[i] + ' Year: ' + years[i])
                 .addTo(map);
 
                 data.push({'marker': circle, 'season': seasons[i], 'author': authors[i], 'year': Number(years[i])});
@@ -125,14 +119,14 @@
             };
 
             function filterMap() {
-                for (let i = 0; i < data.length; i++) { //repeat for every data point
-                    map.removeLayer(data[i].marker) //start by removing every marker
-                    add = true //if any below value is false, this will be false, else true
+                for (let i = 0; i < data.length; i++) {
+                    map.removeLayer(data[i].marker)
+                    add = true
                     for (let key in filterDict) {
                         add *= (filterDict[key].includes(data[i][key])) //true * true = true, true * false = false, false * false = false
                     }
                     if (add == true) { //check that all filters are met
-                        data[i].marker.addTo(map) //add to map
+                        data[i].marker.addTo(map)
                     }
                 }
             }
@@ -155,7 +149,7 @@
                 if (allBox.checked) {
                     for (let i = 0; i < data.length; i++) {
                         map.removeLayer(data[i]) //remove current markers
-                        data[i].marker.addTo(map) //add back all markers
+                        data[i].marker.addTo(map) //add back on all markers
                     }
                     winterBox.box.checked = true //check all the season boxes
                     springBox.box.checked = true
@@ -170,6 +164,10 @@
                         year: uniqueYears
                     };
                 }
+                /* else {
+                    yearBox.checked = true
+                    authorBox.checked = true
+                                    } */
                 filterMap()
             }));
 
@@ -177,7 +175,7 @@
             yearBox.addEventListener("click", (event => {
                 allBox.checked = winterBox.box.checked && springBox.box.checked && summerBox.box.checked && fallBox.box.checked && (!authorBox.checked && !yearBox.checked)
                 if (yearBox.checked) {
-                    filterDict.year = [Number(yearInput.value)] //current year, needs to be in a list as the function iterates over each variable
+                    filterDict.year = [Number(yearInput.value)]
                 }
                 else {
                     filterDict.year = uniqueYears
@@ -186,7 +184,7 @@
             }))
 
             authorBox.addEventListener("click", (event => {
-                allBox.checked = winterBox.box.checked && springBox.box.checked && summerBox.box.checked && fallBox.box.checked && (!authorBox.checked && !yearBox.checked)  //uncheck all box if any season box unchecked 
+                allBox.checked = winterBox.box.checked && springBox.box.checked && summerBox.box.checked && fallBox.box.checked && (!authorBox.checked && !yearBox.checked)
                 if (uniqueAuthor.includes(authorInput.value) && authorBox.checked) {
                     filterDict.author = [authorInput]
                 }
@@ -197,7 +195,7 @@
             }));
             
             winterBox.box.addEventListener("click", (event => {
-                allBox.checked = winterBox.box.checked && springBox.box.checked && summerBox.box.checked && fallBox.box.checked && (!authorBox.checked && !yearBox.checked);
+                allBox.checked = winterBox.box.checked && springBox.box.checked && summerBox.box.checked && fallBox.box.checked && (!authorBox.checked && !yearBox.checked); //uncheck all box if any season box unchecked 
                 if (!winterBox.box.checked) {
                     filterDict.season = filterDict.season.filter(item => item !== 'Winter');
                 }
@@ -259,26 +257,7 @@
                 filterMap()
             });
 
-            /* Below adapted from https://leafletjs.com/examples/choropleth/ */
-            let legend = L.control({position: 'bottomright'});
 
-            legend.onAdd = function (map) {
-
-                let div = L.DomUtil.create('div', 'info legend'),
-                    grades = ['Winter', 'Spring', 'Summer', 'Fall'],
-                    colors = ['darkred', 'green', 'yellow', 'orange'];
-
-                // loop through our density intervals and generate a label with a colored square for each interval
-                for (let i = 0; i < grades.length; i++) {
-                    div.innerHTML +=
-                        '<i style="background:' + colors[i] + '"></i> ' +
-                        grades[i] + '</br>';
-                }
-
-                return div;
-            };
-
-            legend.addTo(map);
 
         })
         

@@ -1,0 +1,40 @@
+body {
+    background-color: #f9efd7;
+}
+h1 {
+    color: #4c0a0d;
+    size: 24pt;
+    font-family: 'Lato';
+}
+h2 {
+    color: #153a0b;
+    size: 16pt;
+    font-style: italic;
+    font-family: 'Lato';
+}
+p, label, legend {
+    color: #1c1614;
+    size: 12pt;
+    font-family: 'Lato';
+}
+div.map{
+    height: 400px;
+    z-index: 0; 
+}
+div.map, input.year_input, input.author_input, fieldset {
+    width: 800px;
+    max-width: 100%;
+}
+
+/* Legend code from https://leafletjs.com/examples/choropleth/ */
+  .legend {
+      line-height: 18px;
+      color: #555;
+}
+  .legend i {
+      width: 18px;
+      height: 18px;
+      float: left;
+      margin-right: 8px;
+      opacity: 0.7;
+}

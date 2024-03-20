@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- TODO: Descriptive text for visualizations -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <style>
+        div.test {
+          height: 200px;
+          /* max-width: 100%; */
+          z-index: 0;
+        }
+    </style> 
+</head>
+<body>
+    <div id="map", class="test">
+    </div>
+    <input id="year_input" type="range" min="1820" max="1920" step="1" value="1820" style="width: 250px;">
+    <p style="text-align:left">Year: <output id="value"></output></p>
+    <input id= "author_input" type= "text" placeholder= "Last name, first name", list = 'author_list' style="width: 600px;">
+    <datalist id = "author_list"></datalist>
+    <fieldset>
+        <legend>Filters:</legend>
+        <div>
+            <input type="checkbox" name="all" id="all" checked>
+            <label for="all">All</label>
+            <input type="checkbox" name="year" id="year">
+            <label for="year">Year</label>
+            <input type="checkbox" name="author" id="author">
+            <label for="author">Author</label>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>Season:</legend>
+        <div>
+            <input type="checkbox" name="winter" id="winter" checked>
+            <label for="winter">Winter</label>
+            <input type="checkbox" name="spring" id="spring" checked>
+            <label for="spring">Spring</label>
+            <input type="checkbox" name="summer" id="summer" checked>
+            <label for="summer">Summer</label>
+            <input type="checkbox" name="fall" id="fall" checked>
+            <label for="fall">Fall</label>
+        </div>
+    </fieldset>
+    
+    <script>
+        d3.csv('/csv/processed_sample_data.csv', function(err, rows) {
+            function unpack(rows, key) {
+                return rows.map(function(row) {return row[key];}); 
+            }
+            let origin = unpack(rows, 'Origin'),
+                title = unpack(rows, 'Title'),
+                authors = unpack(rows, 'Author'),
+                recipient = unpack(rows, 'Recipient')
+                lat = unpack(rows, 'start_lat'),
+                long = unpack(rows, 'start_long'),
+                years = unpack(rows, 'Year'),
+                month = unpack(rows, 'Month'),
+                day = unpack(rows, 'Day'),
+                color = unpack(rows, 'Color'),
+                seasons = unpack(rows, 'Season');
+              
+            let uniqueAuthor = [];
+            for (let i = 0; i < authors.length; i++) {
+                if (!uniqueAuthor.includes(authors[i])) {
+                    uniqueAuthor.push(authors[i])
+                }
+            }
+            let list = document.getElementById('author_list')
+            uniqueAuthor.forEach(function(item) {
+                let option = document.createElement('option');
+                option.value = item;
+                list.appendChild(option);
+            })
+                
+
+            let data = []
+
+            let map = L 
+                .map("map", {
+                    maxBounds: [[-90, -260],[90, 260]],
+                    maxBoundsViscosity: 1
+                })
+                .setView([39.9526,-75.1652], 2);
+
+            L.tileLayer(
+                'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>',
+                maxZoom: 10,
+            }).addTo(map);
+
+            for (var i = 0; i < title.length; i++) { //add circular markers w/ popups for each location
+                circle = L.circleMarker([lat[i], long[i]], { 
+                    color: color[i],
+                    fillColor: color[i],
+                    radius: 2,
+                })
+                .bindPopup(title[i] +  '<br /> By: ' + authors[i] + '<br /> To: ' + recipient[i] + '<br /> Season: ' + seasons[i] + '<br /> Year: ' + years[i])
+                .addTo(map);
+
+                data.push(circle);
+            }
+            
+            function filterAll(seasonsBoxes, authorBox, yearBox, authorInput, yearInput, data) {
+                for (let i = 0; i < data.length; i ++) {
+                    map.removeLayer(data[i])
+                    unchecked_seasons = []
+                    seasonsBoxes.forEach((seasonsBox) => {
+                        if (!seasonsBox.box.checked) {
+                            unchecked_seasons.push(seasonsBox.name)
+                        }
+                    });
+
+                    seasonsBoxes.forEach((seasonBox) => {
+                        if (seasonBox.box.checked) { //seasonBox checked 
+                            if (authorBox.checked) { //season, author boxes checked
+                                if (yearBox.checked) { //season, author, year boxes checked
+                                    if (authors[i] == authorInput && years[i] == yearInput && seasons[i] == seasonBox.name) {
+                                            data[i].addTo(map);
+                                    }
+                                }
+                                else { //season, author boxes checked
+                                    if (authors[i] == authorInput && seasons[i] == seasonBox.name) {
+                                        data[i].addTo(map)
+                                    }
+                                }
+                            }
+                            else { //author box not checked
+                                if (yearBox.checked) { //season, year boxes checked
+                                    if (years[i] == yearInput && seasons[i] == seasonBox.name) {
+                                        data[i].addTo(map)
+                                    }
+                                }
+                                else { //only season box checked
+                                    if (seasons[i] == seasonBox.name) {
+                                        data[i].addTo(map)
+                                    }
+                                }
+                            }
+                        }
+                        else { //season box not checked
+                            if (authorBox.checked) { 
+                                if (yearBox.checked) { //season box not checked, author and year boxes checked
+                                    if (authors[i] == authorInput && year[i] == yearInput) {
+                                        data[i].addTo(map)
+                                    }
+                                }
+                                else { //only author box checked
+                                    if (authors[i] == authorInput) {
+                                        data[i].addTo(map)
+                                    }
+                                }
+                            }
+                            else {
+                                if (yearBox.checked) { //season, author boxes not checked, year checked
+                                    if (year[i] == yearInput) {
+                                        data[i].addTo(map)
+                                    }
+                                }
+                                else { //no boxes checked
+                                    if (!unchecked_seasons.includes(seasons[i])) { //need to check *all* filtered out seasons
+                                        data[i].addTo(map)
+                                    }
+                                }
+                            }
+                        }
+                    });
+                }
+            }
+
+            let allBox = document.querySelector("#all"),
+                yearBox = document.querySelector("#year"),
+                authorBox = document.querySelector("#author"),
+                winterBox = {box: document.querySelector("#winter"), name: "Winter"},
+                springBox = {box: document.querySelector("#spring"), name: 'Spring'},
+                summerBox = {box: document.querySelector("#summer"), name: 'Summer'},
+                fallBox = {box: document.querySelector("#fall"), name: 'Fall'};
+
+            seasonBoxes = [winterBox, springBox, summerBox, fallBox]
+
+            let value = document.querySelector("#value");
+            let yearInput = document.querySelector("#year_input")
+            value.textContent = yearInput.value;
+            
+            allBox.addEventListener("click", (event => {
+                if (allBox.checked) {
+                    for (let i = 0; i < data.length; i++) {
+                        map.removeLayer(data[i]) //remove current markers
+                        data[i].addTo(map) //add back on all markers
+                    }
+                    winterBox.box.checked = true //check all the season boxes
+                    springBox.box.checked = true
+                    summerBox.box.checked = true
+                    fallBox.box.checked = true
+                    yearBox.checked = false //uncheck the year and author boxes
+                    authorBox.checked = false
+                    filterAll(seasonBoxes, authorBox, yearBox, authorInput.value, yearInput.value, data)
+                }
+                else {
+                    yearBox.checked = true
+                    authorBox.checked = true
+                    filterAll(seasonBoxes, authorBox, yearBox, authorInput.value, yearInput.value, data)
+                }
+            }));
+
+            yearBox.addEventListener("click", (event => {
+                allBox.checked = (!authorBox.checked && !yearBox.checked)
+                filterAll(seasonBoxes, authorBox, yearBox, authorInput.value, yearInput.value, data)
+            }))
+
+            authorBox.addEventListener("click", (event => {
+                allBox.checked = (!authorBox.checked && !yearBox.checked)
+                if (uniqueAuthor.includes(authorInput.value)) {
+                    filterAll(seasonBoxes, authorBox, yearBox, authorInput.value, yearInput.value, data)
+                }
+            }));
+            
+            winterBox.box.addEventListener("click", (event => {
+                allBox.checked = winterBox.box.checked && springBox.box.checked && summerBox.box.checked && fallBox.box.checked; //uncheck all box if any season box unchecked 
+                filterAll(seasonBoxes, authorBox, yearBox, authorInput.value, yearInput.value, data);
+            }));
+            springBox.box.addEventListener("click", (event => {
+                allBox.checked = winterBox.box.checked && springBox.box.checked && summerBox.box.checked && fallBox.box.checked;
+                filterAll(seasonBoxes, authorBox, yearBox, authorInput.value, yearInput.value, data);
+            }));
+            summerBox.box.addEventListener("click", (event => {
+                allBox.checked = winterBox.box.checked && springBox.box.checked && summerBox.box.checked && fallBox.box.checked;
+                filterAll(seasonBoxes, authorBox, yearBox, authorInput.value, yearInput.value, data);
+            }));
+            fallBox.box.addEventListener("click", (event => {
+                allBox.checked = winterBox.box.checked && springBox.box.checked && summerBox.box.checked && fallBox.box.checked;
+                filterAll(seasonBoxes, authorBox, yearBox, authorInput.value, yearInput.value, data);
+            }));
+
+            yearInput.addEventListener("input", (event) => {
+                value.textContent = event.target.value;
+                if (!uniqueAuthor.includes(authorInput.value)) {
+                    filterAll(seasonBoxes, false, yearBox, authorInput.value, yearInput.value, data)
+                }
+                else {
+                    filterAll(seasonBoxes, authorBox, yearBox, authorInput.value, yearInput.value, data)
+                }
+            });
+
+            let authorInput = document.querySelector('#author_input')
+            authorInput.addEventListener("input", (event) => {
+                if (uniqueAuthor.includes(authorInput.value)) {
+                    filterAll(seasonBoxes, authorBox, yearBox, authorInput.value, yearInput.value, data)
+                }
+            });
+
+
+        })
+    
+    </script>
+    
+</body>
+</html>

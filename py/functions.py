@@ -68,6 +68,7 @@ def extract_date(data: pd.DataFrame, date_name: str) -> pd.DataFrame:
 
     
     data = data[~data[date_name].str.contains('~')] #some entries have an estimate for the year, drop these
+    data = data[~data[date_name].str.contains('/')] #this accounts for letters where 2 potential years are given
 
     data['Year'] = data[date_name].apply(lambda x: x[0:4])
     data['Month'] = data[date_name].apply(lambda x: x[5:7])

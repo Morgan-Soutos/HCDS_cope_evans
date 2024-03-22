@@ -22,7 +22,10 @@ div.map{
     height: 400px;
     z-index: 0; 
 }
-div.map, input.year_input, input.author_input, fieldset {
+div.timeline {
+    height: 400px;
+}
+div.map, div.timeline, input.year_input, input.author_input, fieldset {
     width: 800px;
     max-width: 100%;
 }

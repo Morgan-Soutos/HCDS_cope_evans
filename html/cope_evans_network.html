@@ -3,9 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Network</title>
     <script src="https://d3js.org/d3.v4.js"></script>
     <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/style.css">
 
 </head>
 <body>
@@ -67,11 +73,11 @@
 
                 for (let i = 0; i < origin.length; i++) {
                     if (!unique_locations.includes(origin[i])) { //can't have repeat locations for nodes
-                        nodes.push({id: origin[i],  label: origin[i], value: 10*(count_element(location, origin[i]))});
+                        nodes.push({id: origin[i],  label: origin[i], value: 10*(count_element(location, origin[i])), color: '#647402'});
                         unique_locations.push(origin[i])
                     }
                     if (!unique_locations.includes(destination[i])) { 
-                        nodes.push({id: destination[i],  label: destination[i], value: 10*(count_element(location, destination[i]))});
+                        nodes.push({id: destination[i],  label: destination[i], value: 10*(count_element(location, destination[i])), color: '#647402'});
                         unique_locations.push(destination[i])
                     }
                     if (!unique_edges.includes(origin[i] + destination[i])) {

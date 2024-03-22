@@ -1,6 +1,7 @@
 body {
     background-color: #f9efd7;
 }
+/* Use h2 for subheadings, h1 for headings */
 h1 {
     color: #4c0a0d;
     size: 24pt;

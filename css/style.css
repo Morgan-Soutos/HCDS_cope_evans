@@ -30,6 +30,10 @@ div.map, div.timeline, input.year_input, input.author_input, fieldset {
     max-width: 100%;
 }
 
+input.slider {
+    vertical-align: middle;
+}
+
 /* Legend code from https://leafletjs.com/examples/choropleth/ */
   .legend {
       line-height: 18px;

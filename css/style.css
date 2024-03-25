@@ -18,20 +18,48 @@ p, label, legend {
     size: 12pt;
     font-family: 'Lato';
 }
-div.map{
+
+div.flex {
+    flex-flow: row wrap;
+}
+
+div.grid {
+    display: grid;
+    grid-template-columns: 0.5fr 2fr;
+}
+
+div.map, div.timeline{
     height: 400px;
     z-index: 0; 
 }
-div.timeline {
-    height: 400px;
-}
-div.map, div.timeline, input.year_input, input.author_input, fieldset {
+
+div.map, div.timeline, fieldset {
     width: 800px;
     max-width: 100%;
 }
 
+div.timeline_inputs {
+    max-width: 100%;
+    display: flex;
+}
+
+input.author_input {
+    width: 400px;
+    max-width: 50%;
+    align-self: center;
+}
+
+input.reset {
+    align-self: center;
+}
+
+input.year_input {
+    max-width: 25%;
+}
+
 input.slider {
     vertical-align: middle;
+    max-width: 50%;
 }
 
 /* Legend code from https://leafletjs.com/examples/choropleth/ */

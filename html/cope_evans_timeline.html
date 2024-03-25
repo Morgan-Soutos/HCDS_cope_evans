@@ -16,31 +16,41 @@
 </head>
 <body>
     <h1>The Collection Over Time</h1>    
-    <p>The following scatterplot represents a timeline of letters in the collection, where the x-axis is the year and the y-axis represents the month and date. The color of each point denotes the author of the letter; however, the number of authors means that many colors are shared between authors. Below the timeline is a textbox for an author's name, which will filter the timeline to only include letters written by this author. Below this are two sliders to define a range of years for filtering. There are also textboxes for year. There is a minumum range of five years.</p>
-    <div id="timeline", class="timeline"></div>
-    <br>
-    <input id= "author_input" class = "author_input" type= "text" placeholder= "Last name, first name" list = 'author_list'>
-    <input id="clear_author" type="button" value="Clear">
-    <datalist id = "author_list"></datalist>
-    
+    <div id="main_content" style="max-width: 100%;">
+        <p>The following scatterplot represents a timeline of letters in the collection, where the x-axis is the year and the y-axis represents the month and date. The color of each point denotes the author of the letter; however, the number of authors means that many colors are shared between authors. Below the timeline is a textbox for an author's name, which will filter the timeline to only include letters written by this author. Below this are two sliders to define a range of years for filtering. There are also textboxes for year. There is a minumum range of five years.</p>
+        <div id="timeline", class="timeline"></div>
+        <br>
+        <!-- TODO: Maybe try grid instead of flex -->
+        
 
-    <div id="year_sliders" class="year_sliders" style="max-width: 100%;">
-        <div id="start" style="max-width: 50%;">
-            <p>
-                Start Year: <input type="number" id="start_year_value" min="1820" max="1920" value="1820">
-                <input type="range" class="slider" id="start_year", step="1", min="1820" max="1920" value="1820">
-            </p>
+        <div class="grid">
+            <div id="author" style=" max-width: 100%;">
+                <input id= "author_input" class = "author_input" type= "text" placeholder= "Last name, first name" list = 'author_list'>
 
-        </div>
-        <div id="end" style="max-width: 50%;">
-            <p>
-                End Year: &nbsp;&nbsp;&nbsp;<input type="number" id="end_year_value" min="1820" max="1920" value="1920">
-                <input type="range" class="slider "id="end_year", step="1", min="1820" max="1920" value="1920">
-            </p>
-        </div>
+            </div>
+            <div>
+                <input id="clear_author" type="button" value="Clear" style="align-self: center;">
+                <datalist id = "author_list"></datalist>
+            </div>
+
+            <div id="year_sliders" class="year_sliders" style="max-width: 100%; display: flex; flex: 2 auto;">
+                <div id="inputs" style="max-width: 100%;">
+                    <p>
+                        Start Year: <input type="number" class="year_input" id="start_year_value" min="1820" max="1920" value="1820">
+                        <input type="range" class="slider" id="start_year", step="1", min="1820" max="1920" value="1820">
+                    </p>
+                    <p>
+                        End Year: &nbsp;&nbsp;&nbsp;<input type="number" class="year_input" id="end_year_value" min="1820" max="1920" value="1920">
+                        <input type="range" class="slider "id="end_year", step="1", min="1820" max="1920" value="1920">
+                    </p>
+                </div>
+            </div>
+            <div style="display: flex; align-self: center;">
+                <input type="button" id="slider_reset" value="Reset"></input>
+            </div>
     </div>
-    <input type="button" id="slider_reset" value="Reset"></input>
     
+
     <script>
         d3.csv('/csv/processed_data_timeline.csv', function(err, rows) {
             function unpack(rows, key) {
@@ -50,8 +60,6 @@
                 title = unpack(rows, 'Title'),
                 authors = unpack(rows, 'Author'),
                 recipient = unpack(rows, 'Recipient')
-                lat = unpack(rows, 'start_lat'),
-                long = unpack(rows, 'start_long'),
                 years = unpack(rows, 'Year'),
                 month = unpack(rows, 'Month'),
                 day = unpack(rows, 'Day'),
@@ -71,14 +79,16 @@
 
             let data = [];
 
-            let uniqueAuthor = [];
-            for (let i = 0; i < authors.length; i++) {
+            let uniqueAuthor = []; 
+            for (let i = 0; i < authors.length; i++) { //gets an array including each author once
                 if (!uniqueAuthor.includes(authors[i])) {
                     uniqueAuthor.push(authors[i])
                 }
             }
+
             let list = document.getElementById('author_list')
-            uniqueAuthor.forEach(function(item) {
+
+            uniqueAuthor.forEach(function(item) { //creates valid options for the author text input
                 let option = document.createElement('option');
                 option.value = item;
                 list.appendChild(option);
@@ -93,25 +103,26 @@
                     if (authors[j] == uniqueAuthor[i]) {
                         x.push(years[j])
                         yVal = Number(month[j])
+                        /* Logic for handling position within months, based on number of days in that month */
                         if (['January', 'March', 'May', 'July', 'August', 'October', 'December'].includes(month[i])) {
-                            yVal += (Number(day[j]) / 32)
+                            yVal += (Number(day[j]) / 32) //31 day months
                         }
                         else if (['April', 'June', 'September', 'November'].includes(month[i])){
-                            yVal += (Number(day[j]) / 31)
+                            yVal += (Number(day[j]) / 31) //30 day months
                         }
                         else {
-                            if (years[j] % 4 == 0) {
-                                yVal += (Number(day[j]) / 30)
+                            if (years[j] % 4 == 0 && years[j] % 100 != 0) { //february, leapyear
+                                yVal += (Number(day[j]) / 30) 
                             }
                             else {
-                                yVal += (Number(day[j]) / 29)
+                                yVal += (Number(day[j]) / 29) //february, non-leapyear
                             }
                         }
                         y.push(yVal)
                         text.push(uniqueAuthor[i] + '<br>Title: ' + title[j] + '<br>Sent: ' + date[j])
                     }
                 }
-                data.push({
+                data.push({ //data is a set of markers
                     x: x,
                     y: y,
                     mode: 'markers',
@@ -126,38 +137,38 @@
 
             let layout = {
                 xaxis: {
-                    autorange: false,
-                    range: [1815, 1925]
+                    autorange: false, //prevents auto-updating range
+                    range: [1820, 1920]
                 },
                 yaxis: {
                     tickmode: "array",
                     tickvals: [1, 2, 3, 4 ,5, 6, 7, 8, 9, 10, 11, 12],
                     ticktext: uniqueMonths
                 },
-                showlegend: false,
-                paper_bgcolor: '#f9efd7',
+                showlegend: false, //legend not useful with this many distince authors
+                paper_bgcolor: '#f9efd7', //match char background to website background
                 plot_bgcolor: '#f9efd7'
                 };
 
             
-            let config = {responsive: true}
+            let config = {responsive: true} //updates when window size changes
             Plotly.newPlot('timeline', data, layout, config);
 
             function filter(authorInput, yearInput) {
                 for (let i = 0; i < uniqueAuthor.length; i++) {
-                    data[i].visible = "legendonly"
-                    if (authorInput == data[i].hoverinfo) {
-                        data[i].visible = true
+                    data[i].visible = "legendonly" //data is still part of the chart, but disabled. accessible by (hidden) legend
+                    if (authorInput == data[i].hoverinfo) { //only make points with correct author visible
+                        data[i].visible = true 
                     }
-                    else if (authorInput == '') {
+                    else if (authorInput == '') { //if no input, make all points visible
                         data[i].visible = true
                     } 
                 }
-                layout.xaxis.range = [Number(yearInput[0]), Number(yearInput[1])]
-               Plotly.react('timeline', data, layout, config)
+                layout.xaxis.range = [Number(yearInput[0]), Number(yearInput[1])] //forces the range to these values, rather than automatically update
+                Plotly.react('timeline', data, layout, config) //faster than creating an entire new plot
             }
 
-            let authorInput = document.querySelector('#author_input'),
+            let authorInput = document.querySelector('#author_input'), //add query selectors for each input
                 authorClear = document.querySelector('#clear_author')
                 yearClear = document.querySelector('#clear_year'),
                 startYear = document.querySelector('#start_year'),

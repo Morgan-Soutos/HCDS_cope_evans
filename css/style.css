@@ -1,11 +1,14 @@
-body {
+html, body {
     background-color: #f9efd7;
+    margin: 0;
+    height: 100%;
 }
 /* Use h2 for subheadings, h1 for headings */
 h1 {
     color: #4c0a0d;
     size: 24pt;
     font-family: 'Lato';
+    text-align: center;
 }
 h2 {
     color: #153a0b;
@@ -13,12 +16,44 @@ h2 {
     font-style: italic;
     font-family: 'Lato';
 }
-p, label, legend {
+p, label, legend, #nav_bar, .essay_button, .viz_button, #nav_bar a{
     color: #1c1614;
-    size: 12pt;
+    font-size: 12pt;
     font-family: 'Lato';
+    text-decoration: none;
 }
 
+
+
+#nav_bar li {
+    display: inline-block;
+}
+
+
+
+#essay_dropdown li, #viz_dropdown li {
+    display: block;
+}
+
+div.main_content {
+    margin: auto;
+    width: 960px;
+    padding-top: 3em;
+}
+
+.nav_bar {
+    height: auto;
+    width: 100%;
+    margin: auto;
+    position: fixed;
+    top: 0;
+}
+
+nav {
+    width: 960px;
+    justify-content: center;
+}
+ 
 div.flex {
     flex-flow: row wrap;
 }
@@ -35,8 +70,9 @@ div.map, div.timeline{
 }
 
 div.map, div.timeline, fieldset {
-    width: 800px;
+    /* width: 800px; */
     max-width: 100%;
+    width: 100%;
 }
 
 div.timeline_inputs {
@@ -63,6 +99,43 @@ input.slider {
     max-width: 50%;
 }
 
+.dropdown button {
+    background-color: lightgray;
+    border: none;
+    outline: none;
+}
+
+.dropdown {
+    display: inline-block;
+    position: relative;
+  }  
+
+.essay_options, .viz_options {
+    display: none;
+    position: absolute;
+    overflow: auto;
+    margin-top: 0;
+    width: 150%;
+  }
+  
+#essays li, #viz li {
+    width: 100%;
+}
+
+.show {
+    display: block;
+    background-color: whitesmoke;   
+}
+
+/* .dropdown:hover .dropdown_options {
+    display: block;
+    background-color: whitesmoke;
+} */
+  
+#visualizations_menu {
+    background-color: lightgray;
+}
+
 /* Legend code from https://leafletjs.com/examples/choropleth/ */
   .legend {
       line-height: 18px;
@@ -80,4 +153,15 @@ input.slider {
     div.grid {
         grid-template-columns: 0.5fr;
     }
-  }
+    /* div.nav_bar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }  */
+}
+
+@media only screen and (max-width: 960px) {
+    div.main_content { 
+        width: 100%;
+    }
+}

@@ -20,8 +20,7 @@
         <p>The following scatterplot represents a timeline of letters in the collection, where the x-axis is the year and the y-axis represents the month and date. The color of each point denotes the author of the letter; however, the number of authors means that many colors are shared between authors. Below the timeline is a textbox for an author's name, which will filter the timeline to only include letters written by this author. Below this are two sliders to define a range of years for filtering. There are also textboxes for year. There is a minumum range of five years.</p>
         <div id="timeline", class="timeline"></div>
         <br>
-        <!-- TODO: Maybe try grid instead of flex -->
-        
+        <!-- Try media query to adjust dimensions of grid for smaller screen -> do 1 column, 4 rows on small screens -->
 
         <div class="grid">
             <div id="author" style=" max-width: 100%;">
@@ -29,7 +28,7 @@
 
             </div>
             <div>
-                <input id="clear_author" type="button" value="Clear" style="align-self: center;">
+                <input id="clear_author" type="button" value="Clear" style="align-self: center; max-width: 100%;">
                 <datalist id = "author_list"></datalist>
             </div>
 
@@ -45,7 +44,7 @@
                     </p>
                 </div>
             </div>
-            <div style="display: flex; align-self: center;">
+            <div style="display: flex; align-self: center; max-width: 100%;">
                 <input type="button" id="slider_reset" value="Reset"></input>
             </div>
     </div>

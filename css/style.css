@@ -25,7 +25,8 @@ div.flex {
 
 div.grid {
     display: grid;
-    grid-template-columns: 0.5fr 2fr;
+    grid-template-columns: 0.5fr 1fr;
+    max-width: 100%;
 }
 
 div.map, div.timeline{
@@ -74,3 +75,9 @@ input.slider {
       margin-right: 8px;
       opacity: 0.7;
 }
+
+@media only screen and (max-width: 600px) {
+    div.grid {
+        grid-template-columns: 0.5fr;
+    }
+  }

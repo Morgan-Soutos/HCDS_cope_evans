@@ -16,19 +16,21 @@ h2 {
     font-style: italic;
     font-family: 'Lato';
 }
-p, label, legend, #nav_bar, .essay_button, .viz_button, #nav_bar a{
+
+p, label, legend, .essay_button, .viz_button, #nav_bar a{
     color: #1c1614;
     font-size: 12pt;
     font-family: 'Lato';
     text-decoration: none;
 }
 
-
+#nav_title a{
+    font-size: 16pt;
+}
 
 #nav_bar li {
     display: inline-block;
 }
-
 
 
 #essay_dropdown li, #viz_dropdown li {
@@ -49,11 +51,11 @@ div.main_content {
     top: 0;
 }
 
-nav {
+/*  nav {
     width: 960px;
-    justify-content: center;
-}
- 
+    justify-content: center; 
+} 
+  */
 div.flex {
     flex-flow: row wrap;
 }

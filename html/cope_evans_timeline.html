@@ -15,41 +15,47 @@
 
 </head>
 <body>
-    
-    <nav id="nav_bar" class="nav_bar" style="background-color: lightgray; max-width: 100%; align-items: center; display: flex;">
-        <a href="">Cope Evans</a>
-        <ul style="text-align: center; list-style: none; flex-direction: row; justify-content: center;">
-            <li>
-                <a href="" style="padding-right: 25%;">About</a>
-            </li>
-            <li>
-                <div id ="essay_dropdown" class="dropdown">
-                    <button onclick="displayDropdown('essay_dropdown')" class="essay_button">Essays</button>
-                    <div class="essay_options">
-                        <ul style="list-style: none; padding-left: 0;" id="essays">
-                            <li><a href="">Essay1</a></li>
-                            <li><a href="">Essay2</a></li>
-                            <li><a href="">. . .</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div id ="viz_dropdown" class="dropdown">
-                    <button onclick="displayDropdown('viz_dropdown')" class="viz_button">Visualizations</button>
-                    <div class="viz_options">
-                        <ul style="list-style: none; padding-left: 0;" id="visualizations">
-                            <li><a href="">Map</a></li>
-                            <li><a href="">Timeline</a></li>
-                            <li><a href="">Network</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <a href="#">Bibliography</a>
-            </li>
-        </ul>
+    <!-- To do: collapsible nav bar -->
+    <nav id="nav_bar" class="nav_bar" style="background-color: lightgray; width: 100%; justify-content: center; display: flex;">
+        <div  style="width: 960px;">
+            <div style="display: inline;">
+                <a href="" style="font-size: 16pt;">Cope Evans</a>
+            </div>
+            <div style="display: inline-flex;">
+                <ul style="list-style: none; margin-left: auto;">
+                    <li>
+                        <a href="">About</a>
+                    </li>
+                    <li>
+                        <div id ="essay_dropdown" class="dropdown">
+                            <button onclick="displayDropdown('essay_dropdown')" class="essay_button">Essays</button>
+                            <div class="essay_options">
+                                <ul style="list-style: none; padding-left: 0;" id="essays">
+                                    <li><a href="">Essay1</a></li>
+                                    <li><a href="">Essay2</a></li>
+                                    <li><a href="">. . .</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div id ="viz_dropdown" class="dropdown">
+                            <button onclick="displayDropdown('viz_dropdown')" class="viz_button">Visualizations</button>
+                            <div class="viz_options">
+                                <ul style="list-style: none; padding-left: 0;" id="visualizations">
+                                    <li><a href="">Map</a></li>
+                                    <li><a href="">Timeline</a></li>
+                                    <li><a href="">Network</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">Bibliography</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </nav>
 
 

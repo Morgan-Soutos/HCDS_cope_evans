@@ -16,45 +16,105 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
     <!-- Stylesheet -->
     <link rel="stylesheet" href="../css/style.css">
+    <!-- Nav Bar Functions -->
+    <script src="../js/nav.js"></script>
 
 
 </head>
 <body>
-    <h1>Mapping the Collection</h1>
-    <p>The following map shows the origins of letters in the collection, where the season a letter was sent is denoted by the color of its marker. Below the map are filters for year, author, and season.</p>
-    <p>On Filters: Moving the slider for year will only change the map if the year box is checked. Similarly, entering an author's name will only change the map if the author box is checked.</p>
-    <div>
-        <div id="map", class="map">
-        </div>
-        <input id="year_input" class="year_input" type="range" min="1820" max="1920" step="1" value="1820">
-        <p>Year: <output id="value"></output></p>
-        <input id= "author_input" class="author_input" type= "text" placeholder= "Last name, first name", list = 'author_list'>
-        <datalist id = "author_list"></datalist>
-        <fieldset>
-            <legend>Filters:</legend>
-            <div>
-                <input type="checkbox" name="all" id="all" checked>
-                <label for="all">All</label>
-                <input type="checkbox" name="year" id="year">
-                <label for="year">Year</label>
-                <input type="checkbox" name="author" id="author">
-                <label for="author">Author</label>
+    <nav id="nav_bar">
+        <div id="nav_content">
+            <div id="home">
+                <a href="">Cope Evans Project</a>
             </div>
-        </fieldset>
 
-        <fieldset>
-            <legend>Season:</legend>
-            <div>
-                <input type="checkbox" name="winter" id="winter" checked>
-                <label for="winter">Winter</label>
-                <input type="checkbox" name="spring" id="spring" checked>
-                <label for="spring">Spring</label>
-                <input type="checkbox" name="summer" id="summer" checked>
-                <label for="summer">Summer</label>
-                <input type="checkbox" name="fall" id="fall" checked>
-                <label for="fall">Fall</label>
+            <div id="nav_collapse">
+                <button id="collapse_button" onclick="showNav()">&equiv;</button>
             </div>
-        </fieldset>
+
+            <div id="nav_list">
+                <ul id="main_list">
+                    <li>
+                        <a href="">About</a>
+                    </li>
+                    <li>
+                        <div id ="essay_dropdown" class="dropdown">
+                            <button onclick="displayDropdown('essay_dropdown')" class="essay_button">Essays &#9660;</button>
+                            <div class="essay_options">
+                                <ul id="essays">
+                                    <br>
+                                    <li><a href="">Essay1</a></li>
+                                    <br>
+                                    <li><a href="">Essay2</a></li>
+                                    <br>
+                                    <li><a href="">. . .</a></li>
+                                    <br>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div id ="viz_dropdown" class="dropdown">
+                            <button onclick="displayDropdown('viz_dropdown')" class="viz_button">Visualizations &#9660;</button>
+                            <div class="viz_options">
+                                <ul id="visualizations">
+                                    <br>
+                                    <li><a href="">Map</a></li>
+                                    <br>
+                                    <li><a href="">Timeline</a></li>
+                                    <br>
+                                    <li><a href="">Network</a></li>
+                                    <br>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">Bibliography</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+    <div class="main_content">
+        <h1>The Cope Evans Project</h1>
+        <h2>Mapping the Collection</h2>
+        <p>The following map shows the origins of letters in the collection, where the season a letter was sent is denoted by the color of its marker. Below the map are filters for year, author, and season.</p>
+        <p>On Filters: Moving the slider for year will only change the map if the year box is checked. Similarly, entering an author's name will only change the map if the author box is checked.</p>
+        <div>
+            <div id="map", class="map">
+            </div>
+            <input id="year_input" class="year_input" type="range" min="1820" max="1920" step="1" value="1820">
+            <p>Year: <output id="value"></output></p>
+            <input id= "author_input" class="author_input" type= "text" placeholder= "Last name, first name", list = 'author_list'>
+            <datalist id = "author_list"></datalist>
+            <fieldset>
+                <legend>Filters:</legend>
+                <div>
+                    <input type="checkbox" name="all" id="all" checked>
+                    <label for="all">All</label>
+                    <input type="checkbox" name="year" id="year">
+                    <label for="year">Year</label>
+                    <input type="checkbox" name="author" id="author">
+                    <label for="author">Author</label>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Season:</legend>
+                <div>
+                    <input type="checkbox" name="winter" id="winter" checked>
+                    <label for="winter">Winter</label>
+                    <input type="checkbox" name="spring" id="spring" checked>
+                    <label for="spring">Spring</label>
+                    <input type="checkbox" name="summer" id="summer" checked>
+                    <label for="summer">Summer</label>
+                    <input type="checkbox" name="fall" id="fall" checked>
+                    <label for="fall">Fall</label>
+                </div>
+            </fieldset>
+        </div>
     </div>
 
     <script>

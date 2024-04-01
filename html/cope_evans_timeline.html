@@ -12,14 +12,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/nav.js"></script>
 
 </head>
 <body>
-    <!-- To do: collapsible nav bar -->
     <nav id="nav_bar">
         <div id="nav_content">
             <div id="home">
-                <a href="">Cope Evans</a>
+                <a href="">Cope Evans Project</a>
             </div>
 
             <div id="nav_collapse">
@@ -291,7 +291,7 @@
         });
     </script>
 
-    <script>
+    <!-- <script>
         function displayDropdown(parentDiv) {
             /* This function and dropdown styling adapted from https://www.w3schools.com/howto/howto_js_dropdown.asp */
             document.getElementById(parentDiv).children[1].classList.toggle("show");
@@ -307,25 +307,6 @@
                 nav.style.display = 'block'
             }
         }
-
-        /* let dropdownData = [['.essay_button', 'essay_options'], ['.viz_button', 'viz_options']]
-
-        window.onclick = function(event) {
-            for (let i = 0; i < dropdownData.length; i++) {
-                if (!event.target.matches(dropdownData[i][0])) {
-                    let dropdown = document.getElementById(dropdownData[i][1]);
-                    for (let j = 0; j < dropdown.length; j++) {
-                        let openDropdown = dropdown[i];
-                        if (openDropdown.classList.contains('show')) {
-                            openDropdown.classList.remove('show')
-                        }
-                    }
-                }
-            }
-        }  */
-
-
-
 
         window.onclick = function(event) {
             if (!event.target.matches('.essay_button')) {
@@ -349,6 +330,6 @@
                 }
             }
         }
-    </script>
+    </script> -->
 </body>
 </html>

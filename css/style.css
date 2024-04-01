@@ -6,13 +6,13 @@ html, body {
 /* Use h2 for subheadings, h1 for headings */
 h1 {
     color: #4c0a0d;
-    size: 24pt;
+    font-size: 24pt;
     font-family: 'Lato';
     text-align: center;
 }
 h2 {
     color: #153a0b;
-    size: 16pt;
+    font-size: 16pt;
     font-style: italic;
     font-family: 'Lato';
 }
@@ -66,13 +66,20 @@ ul {
 
 #nav_list {
     display: inline-flex; 
-    justify-self: end;
-    justify-content: space-evenly;
+    /* justify-self: end; */
 }
 
 #main_list {
+    display: flex;
     margin: auto;
+    justify-content: space-between;
+    width: 100%;
 }
+
+#main_list li {
+    display: block;
+}
+
 
 #essay_dropdown li, #viz_dropdown li {
     display: block;
@@ -81,7 +88,7 @@ ul {
 div.main_content {
     margin: auto;
     width: 960px;
-    padding-top: 3em;
+    padding-top: 2em;
     justify-content: center;
 }
 
@@ -233,10 +240,13 @@ input.slider {
         display: block;
         padding-left: 0;
     }
+    #main_list {
+        display: block;
+    }
 }
 
 @media only screen and (min-width: 720px) {
     #nav_list {
-        display: inline-flex;
+        display: inline-flex !important; /* !important overrides inline styling, needed in conjunction with function to open nav menu */
     }
 }

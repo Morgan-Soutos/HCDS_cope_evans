@@ -13,15 +13,75 @@
 
     <link rel="stylesheet" href="../css/style.css">
 
+    <script src="../js/nav.js"></script>
+
 </head>
 <body>
-    <h1>Connections Across the Globe</h1>
-    <div id="network">
-    </div>
+    <nav id="nav_bar">
+        <div id="nav_content">
+            <div id="home">
+                <a href="">Cope Evans Project</a>
+            </div>
 
-    <input type="checkbox" name="simplify" id="simplify", checked="true">
-    <label for="simplify">Use Simplified Labels</label>
-    
+            <div id="nav_collapse">
+                <button id="collapse_button" onclick="showNav()">&equiv;</button>
+            </div>
+
+            <div id="nav_list">
+                <ul id="main_list">
+                    <li>
+                        <a href="">About</a>
+                    </li>
+                    <li>
+                        <div id ="essay_dropdown" class="dropdown">
+                            <button onclick="displayDropdown('essay_dropdown')" class="essay_button">Essays &#9660;</button>
+                            <div class="essay_options">
+                                <ul id="essays">
+                                    <br>
+                                    <li><a href="">Essay1</a></li>
+                                    <br>
+                                    <li><a href="">Essay2</a></li>
+                                    <br>
+                                    <li><a href="">. . .</a></li>
+                                    <br>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div id ="viz_dropdown" class="dropdown">
+                            <button onclick="displayDropdown('viz_dropdown')" class="viz_button">Visualizations &#9660;</button>
+                            <div class="viz_options">
+                                <ul id="visualizations">
+                                    <br>
+                                    <li><a href="">Map</a></li>
+                                    <br>
+                                    <li><a href="">Timeline</a></li>
+                                    <br>
+                                    <li><a href="">Network</a></li>
+                                    <br>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">Bibliography</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+    <div class="main_content">
+        <h1>The Cope Evans Project</h1>
+        <h2>Connections Across the Globe</h2>
+        <p>The following network graph shows the locations to and from which letters in the collection were sent. Currently, not every letter in the dataset used has an associated destination. Such letters cannot be represented by this graph. The purpose of this visualization is to demonstrate broader trends that can be seen in the dataset; however, clicking the checkbox below will show locations given their precise name. The nodes of the graph can be moved by clicking and dragging.</p>
+        <div id="network">
+        </div>
+
+        <input type="checkbox" name="simplify" id="simplify", checked="true">
+        <label for="simplify">Use Simplified Labels</label>
+    </div>
 
     <script>
         let csv = '/csv/processed_data_networks_simplified.csv'

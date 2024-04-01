@@ -156,6 +156,8 @@ input.slider {
     overflow: auto;
     margin-top: 0;
     width: 200px;
+    border-radius: 15px; 
+    border: 2px solid #1c1614;
   }
   
 #essays li, #viz li {
@@ -168,11 +170,7 @@ input.slider {
 
 .show {
     display: block;
-    background-color: whitesmoke;   
-}
-  
-#visualizations_menu {
-    background-color: lightgray;
+    background-color: whitesmoke;  
 }
 
 #nav_collapse {
@@ -188,8 +186,8 @@ input.slider {
     padding-left: 0;
 }
 
-#collapse_essays {
-    display: none;
+#visualizations{
+    justify-self: center
 }
 
 /* Legend code from https://leafletjs.com/examples/choropleth/ */

@@ -16,36 +16,49 @@
 </head>
 <body>
     <!-- To do: collapsible nav bar -->
-    <nav id="nav_bar" class="nav_bar" style="background-color: lightgray; width: 100%; justify-content: center; display: flex;">
-        <div  style="width: 960px;">
-            <div style="display: inline;">
-                <a href="" style="font-size: 16pt;">Cope Evans</a>
+    <nav id="nav_bar">
+        <div id="nav_content">
+            <div id="home">
+                <a href="">Cope Evans</a>
             </div>
-            <div style="display: inline-flex;">
-                <ul style="list-style: none; margin-left: auto;">
+
+            <div id="nav_collapse">
+                <button id="collapse_button" onclick="showNav()">&equiv;</button>
+            </div>
+
+            <div id="nav_list">
+                <ul id="main_list">
                     <li>
                         <a href="">About</a>
                     </li>
                     <li>
                         <div id ="essay_dropdown" class="dropdown">
-                            <button onclick="displayDropdown('essay_dropdown')" class="essay_button">Essays</button>
+                            <button onclick="displayDropdown('essay_dropdown')" class="essay_button">Essays &#9660;</button>
                             <div class="essay_options">
-                                <ul style="list-style: none; padding-left: 0;" id="essays">
+                                <ul id="essays">
+                                    <br>
                                     <li><a href="">Essay1</a></li>
+                                    <br>
                                     <li><a href="">Essay2</a></li>
+                                    <br>
                                     <li><a href="">. . .</a></li>
+                                    <br>
                                 </ul>
                             </div>
                         </div>
                     </li>
                     <li>
                         <div id ="viz_dropdown" class="dropdown">
-                            <button onclick="displayDropdown('viz_dropdown')" class="viz_button">Visualizations</button>
+                            <button onclick="displayDropdown('viz_dropdown')" class="viz_button">Visualizations &#9660;</button>
                             <div class="viz_options">
-                                <ul style="list-style: none; padding-left: 0;" id="visualizations">
+                                <ul id="visualizations">
+                                    <br>
                                     <li><a href="">Map</a></li>
+                                    <br>
                                     <li><a href="">Timeline</a></li>
+                                    <br>
                                     <li><a href="">Network</a></li>
+                                    <br>
                                 </ul>
                             </div>
                         </div>
@@ -55,11 +68,12 @@
                     </li>
                 </ul>
             </div>
+
         </div>
     </nav>
 
 
-    <div class="main_content" style="justify-content: center;">
+    <div class="main_content">
         <h1>The Cope Evans Project</h1> 
         <h2>The Collection Over Time</h2> 
         <p>The following scatterplot represents a timeline of letters in the collection, where the x-axis is the year and the y-axis represents the month and date. The color of each point denotes the author of the letter; however, the number of authors means that many colors are shared between authors. Below the timeline is a textbox for an author's name, which will filter the timeline to only include letters written by this author. Below this are two sliders to define a range of years for filtering. There are also textboxes for year. There is a minumum range of five years.</p>
@@ -281,6 +295,17 @@
         function displayDropdown(parentDiv) {
             /* This function and dropdown styling adapted from https://www.w3schools.com/howto/howto_js_dropdown.asp */
             document.getElementById(parentDiv).children[1].classList.toggle("show");
+        }
+
+        function showNav() {
+            let nav = document.getElementById("nav_list")
+            let bar = document.getElementById("nav_bar")
+            if (nav.style.display == 'block') {
+                nav.style.display = 'none'
+            }
+            else {
+                nav.style.display = 'block'
+            }
         }
 
         /* let dropdownData = [['.essay_button', 'essay_options'], ['.viz_button', 'viz_options']]

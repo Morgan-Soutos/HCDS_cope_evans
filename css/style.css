@@ -158,6 +158,7 @@ input.slider {
     width: 200px;
     border-radius: 15px; 
     border: 2px solid #1c1614;
+    z-index: 1; /* Displays content over buttons */
   }
   
 #essays li, #viz li {

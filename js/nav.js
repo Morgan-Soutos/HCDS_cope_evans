@@ -7,7 +7,6 @@ function displayDropdown(parentDiv) {
 
 function showNav() {
     let nav = document.getElementById("nav_list")
-    let bar = document.getElementById("nav_bar")
     if (nav.style.display == 'block') {
         nav.style.display = 'none'
     }

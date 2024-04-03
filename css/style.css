@@ -99,7 +99,7 @@ div.flex {
 
 div.grid {
     display: grid;
-    grid-template-columns: 0.5fr 1fr;
+    grid-template-columns: 1fr 0.5fr;
     max-width: 100%;
 }
 
@@ -130,14 +130,27 @@ input.reset {
 }
 
 input.year_input {
+    max-width: 100%;
+}
+
+#year_sliders {
+    width: 100%
+}
+
+#start_year_value, #end_year_value {
     max-width: 25%;
 }
 
-input.slider {
+#start_year, #end_year {
+    vertical-align: middle;
+    width: 50%;
+}
+
+/* input.slider {
     vertical-align: middle;
     max-width: 50%;
 }
-
+ */
 .dropdown button {
     background-color: lightgray;
     border: none;

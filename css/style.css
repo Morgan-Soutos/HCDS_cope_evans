@@ -69,6 +69,14 @@ ul {
     /* justify-self: end; */
 }
 
+#nav_bar a:hover, #nav_bar button:hover, #nav_bar {
+    color: #555
+}
+
+.dropdown button {
+    background-color: darkgray;
+}
+
 #main_list {
     display: flex;
     margin: auto;
@@ -89,7 +97,12 @@ div.main_content {
     margin: auto;
     width: 960px;
     padding-top: 2em;
-    justify-content: center;
+}
+
+div.map {
+    width: calc(100% - 4px); /* 2 px smaller on each side for border */
+    border-width: 2px;
+    border-style: solid;
 }
 
 div.flex {
@@ -103,15 +116,20 @@ div.grid {
     max-width: 100%;
 }
 
+
 div.map, div.timeline{
     height: 400px;
     z-index: 0; 
 }
 
-div.map, div.timeline, fieldset {
-    /* width: 800px; */
+div.map, div.timeline {
     max-width: 100%;
     width: 100%;
+}
+
+fieldset {
+    width: calc(100% - 28px);  /* 12px padding + 2px border on each side*/
+    margin: 0;
 }
 
 div.timeline_inputs {
@@ -122,7 +140,7 @@ div.timeline_inputs {
 input.author_input {
     width: 400px;
     max-width: 50%;
-    align-self: center;
+    
 }
 
 input.reset {
@@ -130,7 +148,7 @@ input.reset {
 }
 
 input.year_input {
-    max-width: 100%;
+    width: 100%;
 }
 
 #year_sliders {
@@ -232,6 +250,9 @@ input.year_input {
 @media only screen and (max-width: 720px) {
     div.main_content, #nav_content { 
         width: 100%;
+    }
+    div.map {
+        width: calc(100vw - 4px);
     }
     #nav_list {
         display: none;

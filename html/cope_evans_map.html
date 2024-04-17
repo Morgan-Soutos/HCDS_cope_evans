@@ -86,11 +86,11 @@
         <div id="map", class="map">
         </div>
         <input id="year_input" class="year_input" type="range" min="1820" max="1920" step="1" value="1820">
-        <p>Year: <output id="value"></output></p>
+        <p>Year: <input type="number" id="year_value" min="1820" max="1920" value="1820"></p>
         <input id= "author_input" class="author_input" type= "text" placeholder= "Last name, first name", list = 'author_list'>
         <datalist id = "author_list"></datalist>
         <fieldset>
-            <legend>Filters:</legend>
+            <legend>Filters</legend>
             <div>
                 <input type="checkbox" name="all" id="all" checked>
                 <label for="all">All</label>
@@ -102,7 +102,7 @@
         </fieldset>
 
         <fieldset>
-            <legend>Season:</legend>
+            <legend>Season</legend>
             <div>
                 <input type="checkbox" name="winter" id="winter" checked>
                 <label for="winter">Winter</label>
@@ -152,14 +152,14 @@
             let data = [];
 
 
-            let map = L 
+            let map = L //set up the map to center on Philadelphia and limit panning
                 .map("map", {
                     maxBounds: [[-90, -260],[90, 260]],
                     maxBoundsViscosity: 1
                 })
                 .setView([39.9526,-75.1652], 2);
 
-            L.tileLayer(
+            L.tileLayer( //Actual map layer used, with attribution
                 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>',
                 maxZoom: 10,
@@ -178,7 +178,7 @@
             };
 
 
-            filterDict = {
+            filterDict = { //determines what points are kept based on current filters
                 'season': ['Winter', 'Spring', 'Summer', 'Fall'],
                 'author': uniqueAuthor,
                 'year': uniqueYears
@@ -188,13 +188,17 @@
                 for (let i = 0; i < data.length; i++) { //repeat for every data point
                     map.removeLayer(data[i].marker) //start by removing every marker
                     add = true //if any below value is false, this will be false, else true
-                    for (let key in filterDict) {
+                    for (let key in filterDict) { //check that the marker's variables include the value of the key in the dictionary
                         add *= (filterDict[key].includes(data[i][key])) //true * true = true, true * false = false, false * false = false
                     }
                     if (add == true) { //check that all filters are met
                         data[i].marker.addTo(map) //add to map
                     }
                 }
+            }
+
+            function allChecked() { //used to add all markers if all the season boxes and neither author nor year box are checked
+                return winterBox.box.checked && springBox.box.checked && summerBox.box.checked && fallBox.box.checked && (!authorBox.checked && !yearBox.checked)
             }
 
             let allBox = document.querySelector("#all"),
@@ -207,7 +211,7 @@
 
             seasonBoxes = [winterBox, springBox, summerBox, fallBox]
 
-            let value = document.querySelector("#value");
+            let value = document.querySelector("#year_value");
             let yearInput = document.querySelector("#year_input")
             value.textContent = yearInput.value;
             
@@ -223,8 +227,8 @@
                     fallBox.box.checked = true
                     yearBox.checked = false //uncheck the year and author boxes
                     authorBox.checked = false
-                    authorInput.value = ''
-                    filterDict = {
+                    //authorInput.value = ''
+                    filterDict = { //reset filter dictionary
                         season: ['Winter', 'Spring', 'Summer', 'Fall'],
                         author: uniqueAuthor,
                         year: uniqueYears
@@ -235,7 +239,7 @@
 
 
             yearBox.addEventListener("click", (event => {
-                allBox.checked = winterBox.box.checked && springBox.box.checked && summerBox.box.checked && fallBox.box.checked && (!authorBox.checked && !yearBox.checked)
+                allBox.checked = allChecked()
                 if (yearBox.checked) {
                     filterDict.year = [Number(yearInput.value)] //current year, needs to be in a list as the function iterates over each variable
                 }
@@ -246,20 +250,20 @@
             }))
 
             authorBox.addEventListener("click", (event => {
-                allBox.checked = winterBox.box.checked && springBox.box.checked && summerBox.box.checked && fallBox.box.checked && (!authorBox.checked && !yearBox.checked)  //uncheck all box if any season box unchecked 
+                allBox.checked = allChecked()  //uncheck all box if any season box unchecked 
                 if (uniqueAuthor.includes(authorInput.value) && authorBox.checked) {
-                    filterDict.author = [authorInput]
+                    filterDict.author = [authorInput.value];
                 }
                 else {
-                    filterDict.author = uniqueAuthor
+                    filterDict.author = uniqueAuthor;
                 }
-                filterMap()
+                filterMap();
             }));
             
             winterBox.box.addEventListener("click", (event => {
-                allBox.checked = winterBox.box.checked && springBox.box.checked && summerBox.box.checked && fallBox.box.checked && (!authorBox.checked && !yearBox.checked);
+                allBox.checked = allChecked();
                 if (!winterBox.box.checked) {
-                    filterDict.season = filterDict.season.filter(item => item !== 'Winter');
+                    filterDict.season = filterDict.season.filter(item => item !== 'Winter'); //remove Winter from season list in filterDict
                 }
                 else {
                     filterDict.season.push('Winter')
@@ -268,7 +272,7 @@
             }));
 
             springBox.box.addEventListener("click", (event => {
-                allBox.checked = winterBox.box.checked && springBox.box.checked && summerBox.box.checked && fallBox.box.checked && (!authorBox.checked && !yearBox.checked);
+                allBox.checked = allChecked();
                 if (!springBox.box.checked) {
                     filterDict.season = filterDict.season.filter(item => item !== 'Spring');
                 }
@@ -279,7 +283,7 @@
             }));
 
             summerBox.box.addEventListener("click", (event => {
-                allBox.checked = winterBox.box.checked && springBox.box.checked && summerBox.box.checked && fallBox.box.checked && (!authorBox.checked && !yearBox.checked);
+                allBox.checked = allChecked();
                 if (!summerBox.box.checked) {
                     filterDict.season = filterDict.season.filter(item => item !== 'Summer');
                 }
@@ -290,7 +294,7 @@
             }));
 
             fallBox.box.addEventListener("click", (event => {
-                allBox.checked = winterBox.box.checked && springBox.box.checked && summerBox.box.checked && fallBox.box.checked && (!authorBox.checked && !yearBox.checked);
+                allBox.checked = allChecked();
                 if (!fallBox.box.checked) {
                     filterDict.season = filterDict.season.filter(item => item !== 'Fall');
                 }
@@ -301,22 +305,31 @@
             }));
 
             yearInput.addEventListener("input", (event) => {
-                value.textContent = event.target.value;
-                filterDict.year = [Number(value.textContent)]
+                value.value = event.target.value; //updates year text input
+                filterDict.year = [Number(value.value)]
+                if (yearBox.checked) {
+                    filterMap() //only apply filters if box checked
+                }
+            });
+
+            value.addEventListener("input", (event) => {
+                yearInput.value = value.value //updates year slider
+                filterDict.year = [Number(value.value)]
                 if (yearBox.checked) {
                     filterMap()
                 }
-            });
+            })
 
             let authorInput = document.querySelector('#author_input')
             authorInput.addEventListener("input", (event) => {
                 if (uniqueAuthor.includes(authorInput.value) && authorBox.checked) {
                     filterDict.author = [authorInput.value]
+                    filterMap()
                 }
                 else {
                     filterDict.author = uniqueAuthor
                 }
-                filterMap()
+                
             });
 
             /* Below adapted from https://leafletjs.com/examples/choropleth/ */

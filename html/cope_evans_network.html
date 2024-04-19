@@ -79,8 +79,21 @@
         <div id="network">
         </div>
 
-        <input type="checkbox" name="simplify" id="simplify", checked="true">
-        <label for="simplify">Use Simplified Labels</label>
+        <div id="simplify_network">
+            <input type="checkbox" name="simplify" id="simplify", checked="true">
+            <label for="simplify">Use Simplified Labels</label>
+        </div>
+
+        <p>
+        The network was built using vis.js, a browser-based library that can produce networks, among other forms of data visualization.  vis.js allows for easily creating nodes and edges by making arrays for each. These then get put into another object for the overall data, which serves as an input for the vis.Network function.
+        </p>
+        <p>
+        Preprocessing for this visualization was straightforward, as all that was needed was an origin and destination. As such, preprocessing consisted of dropping all letters where there was no listed origin or destination.
+        </p>
+        <p>
+        To create the network,  the dataset was first parsed with d3. Before working with the data, two functions were created. The first counts the number of occurrences of a given element in an array. The second essentially does the same, but for two elements and for two arrays at the same time, checking the number of occurrences of that pair. For each letter, three separate conditions were checked. First, whether or not the current origin was in the current list of unique locations. If not, then a node was created with the id and label being the name of the origin, and the size being the number of occurrences of that location both as origin and destination. This location was then added to the list of unique locations. The same was done with the letter’s destination. Third, the function checks if the origin and destination are included in a list of unique edges. If not, an edge is added between origin and destination, where the thickness is determined by the number of occurrences of said origin and destination together. A string of the origin concatenated with the destination is then added to the list of unique edges. With the nodes and edges, a new vis.Network can be created and visualized.
+        </p>
+
     </div>
 
     <script>
@@ -171,7 +184,7 @@
 
             })
         }
-    </script>
+    </script> 
     
 </body>
 </html>

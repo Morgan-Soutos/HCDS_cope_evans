@@ -18,7 +18,8 @@
     <link rel="stylesheet" href="../css/style.css">
     <!-- Nav Bar Functions -->
     <script src="../js/nav.js"></script>
-
+    <!-- Map -->
+    <script src="../js/map.js"></script>
 
 </head>
 <body>
@@ -115,9 +116,27 @@
             </div>
         </fieldset>
         
+        <p>
+            The map was built using Leaflet, a dedicated JavaScript library for creating interactive maps. Leaflet has many desirable features for mapmaking, one of which is the “circleMarker” object. Most relevant to this particular visualization is the ability to add popups via the “bindPopup” method. For the current version of the map, these pop ups include title, author, recipient, season, and year. 
+        </p>
+        <p>
+            A number of steps were involved in preprocessing the data. First, the csv file was imported as a Pandas dataframe. This was then filtered down to only include columns relevant to the map, namely title, description, date created, origin, author, and recipient. It was decided that letters would be mapped by their origin, and that the season a letter was sent was important, so only letters with a listed origin and date were kept. A csv file with geocoding data was provided, which was used to create a dictionary associating locations with their latitude and longitude. This was then applied to the ‘Origin’ column of the dataframe. Separate columns were then created for latitude and longitude, to make parsing the data more straightforward. The date was then split up into year, month, and day and the data was filtered to only include years between 1820 and 1920. A dictionary was created mapping months to seasons, and a new column was created by applying this dictionary to the month column. These were then associated with a color, creating one last column by using another dictionary. This filtered data was used to create a new csv file.
+        </p>
+        <p>
+            To create the map, the d3 library was used to parse the data. For each letter, a circleMarker was created and added to an array. The map was created to be centered on Philadelphia,  with panning limited such that the whole world was visible while not allowing for any wrapping. This is to avoid the issue of markers not being visible when panning completely around the map. One other solution is to make the markers periodic, adding the same marker on each wraparound. Since there is no practical need for wrapping all the way around the map, this was not considered necessary.
+        </p>
+        <p>
+            An important aspect of this map is its various filters, namely for year, author, and season. While each has a different input method, all make use of html checkboxes. Checkboxes are useful as they have the attribute “checked”, which is interpreted as a boolean by JavaScript. The season filters are the most straightforward, as they only use checkboxes. The author filter checks for an input in a text box and the value of the checkbox. To help users search for valid authors, the textbox has a list attribute that consists of all unique authors. This means that as a user is typing in the box, a list of valid authors will appear. Last, the year filter uses a range input, from 1820 to 1920. By getting this value, when the year checkbox is checked, the map will only include letters sent during the specified year.
+        </p>
+        <p>
+            To handle filtering, two objects were used, with overlapping attributes. For the dataset, each letter is associated with its marker, its season, year, and author. Once created, this list should not be changed. Alongside this, there is an object that keeps track of the current filters. This includes attributes for season, year, and author. When a checkbox is checked or unchecked, the appropriate attribute is modified and the filterMap function is called.
+        </p>
+        <p>
+            The filterMap function handles the actual filtering process. It iterates over each data point, initially removing them from the map. Then, for each point, it initializes a variable “add” to “true”. It then iterates over each key in the main filter object. It checks if each filter matches the associated value for the data point object, multiplying “add” by that value. Multiplication of booleans works like the logical “and,” i.e. true * true = true, true * false = false, false * true = false, and false * false = true. This means that if any filter value is not matched by the data point that point does not get added back to the map. Since this function is based on an iterable object, it should be quite straightforward to extend, though adding too many filters could hinder overall readability by adding too much visual noise.        
+        </p>
     </div>
 
-    <script>
+    <!-- <script>
         d3.csv('/csv/processed_data_map.csv', function(err, rows) { //parse data with d3
             function unpack(rows, key) {
                 return rows.map(function(row) {return row[key];}); 
@@ -355,7 +374,7 @@
 
         })
         
-    </script>
+    </script> -->
     
 </body>
 </html>

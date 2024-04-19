@@ -13,6 +13,8 @@
 
     <link rel="stylesheet" href="../css/style.css">
     <script src="../js/nav.js"></script>
+    <!-- Timeline -->
+    <script src="../js/timeline.js"></script>
 
 </head>
 <body>
@@ -85,7 +87,7 @@
                 <input id= "author_input" class = "author_input" type= "text" placeholder= "Last name, first name" list = 'author_list'>
                 <datalist id = "author_list"></datalist>
             </div>
-            <div style="display: flex; justify-content: center;">
+            <div style="display: flex;">
                 <input id="clear_author" type="button" value="Clear" style="align-self: center; max-width: 100%;">
             </div>
 
@@ -101,15 +103,28 @@
                     </p>
                 </div>
             </div>
-            <div style="display: flex; align-self: center; justify-content: center; max-width: 100%;">
+            <div style="display: flex; align-self: center; max-width: 100%;">
                 <input type="button" id="slider_reset" value="Clear"></input>
             </div>
+    </div>  
+        <p>
+        The timeline was built using Plotly.js, a JavaScript library that allows for the creation of interactive data visualizations. One particularly useful feature of Plotly.js is traces, which act like separate layers that can be viewed individually. Certainly the same effect could be achieved with another library, but Plotly.js makes the process very straightforward.
+        </p>
+        <p>
+        Preprocessing for this visualization was rather simple, as the only relevant variable was the date created. After separating into day, month, and year, as well as filtering to only include years from 1820 to 1920, preprocessing was complete.
+        </p>
+        <p>
+        Before plotting, it was necessary to create arrays for unique years, months, and authors. The years and months serve as the x- and y-axes respectively, while the author determines the trace of a data point. To create each trace, there is first a loop over the length of the list of unique authors. Then, variables for x, y, and text are initialized, all as arrays. x and y determine where each point is on the plot, and text determines the text that appears when clicking or hovering over a point. Within this loop, another loop iterates over each letter. If the author of the letter matches the current author, then this letter’s data gets added to the trace. Some calculations are made to put the point in between months corresponding to the date they were sent. It should be noted that when d3 parses a csv, all values will be read as string, meaning that numbers will need to be converted before being used in calculations. It was decided that the “name” attribute of each trace should be left blank. This is because it is shown when hovering over a point; however, specific text was already created for this purpose and the name is rendered obsolete. However, having the author’s name as an attribute was still useful, as it made the process of filtering data simpler. To work around this, each trace’s “hoverinfo” attribute was set to the current author. After setting appropriate values for the layout and making sure that the plot was responsive to screen size changes, the scatter plot is ready to plot.
+        </p>
+        <p>
+        The filtering works by taking a string from an html text input. When the input matches a valid author name, the filter function is called. The function first hides all of the traces. It then checks the hoverinfo of each trace. If it matches the input, that trace is made visible. Then a new plot is created, replacing the old one. 
+        </p>
     </div>
 
 
     
 
-    <script>
+    <!-- <script>
         d3.csv('/csv/processed_data_timeline.csv', function(err, rows) {
             function unpack(rows, key) {
                 return rows.map(function(row) {return row[key];}); 
@@ -288,7 +303,7 @@
        
 
         });
-    </script>
+    </script> -->
 
     <!-- <script>
         function displayDropdown(parentDiv) {

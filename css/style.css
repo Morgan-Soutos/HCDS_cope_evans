@@ -3,6 +3,11 @@ html, body {
     margin: 0;
     height: 100%;
 }
+
+body {
+    padding-top: 2em;
+}
+
 /* Use h2 for subheadings, h1 for headings */
 h1 {
     color: #4c0a0d;
@@ -42,6 +47,7 @@ ul {
     background-color: lightgray;
     display: flex;
     justify-content: center;
+    z-index: 9999;
 }
 
 #nav_content {
@@ -56,17 +62,16 @@ ul {
     font-size: 16pt;
 }
 
+#nav_list {
+    display: inline-flex; 
+}
+
 #nav_list ul {
     align-self: right;
 }
 
 #nav_bar li {
     display: inline-block;
-}
-
-#nav_list {
-    display: inline-flex; 
-    /* justify-self: end; */
 }
 
 #nav_bar a:hover, #nav_bar button:hover, #nav_bar {
@@ -96,7 +101,6 @@ ul {
 div.main_content {
     margin: auto;
     width: 960px;
-    padding-top: 2em;
 }
 
 div.map {
@@ -164,11 +168,13 @@ input.year_input {
     width: 50%;
 }
 
-/* input.slider {
-    vertical-align: middle;
-    max-width: 50%;
+#simplify_network {
+    border-width: 2px;
+    border-style: solid;
+    width: 20%;
+    margin: 0 auto;
 }
- */
+
 .dropdown button {
     background-color: lightgray;
     border: none;

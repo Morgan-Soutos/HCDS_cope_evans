@@ -221,7 +221,7 @@ d3.csv('/csv/processed_data_map.csv', function(err, rows) { //parse data with d3
             grades = ['Winter', 'Spring', 'Summer', 'Fall'],
             colors = ['darkred', 'green', 'yellow', 'orange'];
 
-        // loop through our density intervals and generate a label with a colored square for each interval
+        
         for (let i = 0; i < grades.length; i++) {
             div.innerHTML +=
                 '<i style="background:' + colors[i] + '"></i> ' +

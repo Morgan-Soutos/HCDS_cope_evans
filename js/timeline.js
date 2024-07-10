@@ -114,10 +114,10 @@ d3.csv('/csv/processed_data_timeline.csv', function(err, rows) {
     let authorInput = document.querySelector('#author_input'), //add query selectors for each input
         authorClear = document.querySelector('#clear_author')
         yearClear = document.querySelector('#clear_year'),
-        startYear = document.querySelector('#start_year'),
+        startYear = document.querySelector('#start_year'), //slider value
         endYear = document.querySelector('#end_year'),
         startYearInput = document.querySelector('#start_year_value'),
-        endYearInput = document.querySelector('#end_year_value'),
+        endYearInput = document.querySelector('#end_year_value'), //typed input
         sliderReset = document.querySelector('#slider_reset')
         
 
